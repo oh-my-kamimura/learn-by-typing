@@ -15,10 +15,6 @@ const routes: Routes = [
     path: 'play',
     loadChildren: () => import('./play/play.module').then(m => m.PlayModule),
   },
-  // {
-  //   path: 'play',
-  //   loadChildren: 'src/app/play/play.module#PlayModule'
-  // },
   { path: 'form/log-in', component: LogInComponent },
   { path: 'form/sign-up', component: SignUpComponent }
 ];
