@@ -5,7 +5,8 @@ $accent-color: rgba(230,80,30,1);
 $start-button-width: 300px;
 $start-button-height: 52px;
 
-.start-button {
+
+.start-button{
   width: $start-button-width;
   height: $start-button-height;
   opacity: 1;
@@ -135,50 +136,48 @@ $start-button-height: 52px;
       opacity: 1;
       text-align: center;
     }
-
-    }
-    .img-keyboard {
-      width: 313px;
-      height: 386px;
-      background: url("../../assets/main-keyboard.png");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      position: absolute;
-      top: $header-height;
-      right: 0;
-      overflow: hidden;
-    }
-    .img-book {
-      width: 263px;
-      height: 411px; // *1.5627
-      background: url("../../assets/main-book.png");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      position: absolute;
-      top: $header-height;
-      left: 0;
-      overflow: hidden;
-    }
-    .img-pen {
-      width: 175px;
-      height: 260px;
-      background: url("../../assets/main-pen.png");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      position: absolute;
-      top: 340px;
-      left: 80px;
-      transform: rotate(-120deg);
-      overflow: hidden;
-    }
   }
-
+  .img-keyboard {
+    width: 313px;
+    height: 386px;
+    background: url("../../assets/main-keyboard.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: $header-height;
+    right: 0;
+    overflow: hidden;
+  }
+  .img-book {
+    width: 263px;
+    height: 411px; // *1.5627
+    background: url("../../assets/main-book.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: $header-height;
+    left: 0;
+    overflow: hidden;
+  }
+  .img-pen {
+    width: 175px;
+    height: 260px;
+    background: url("../../assets/main-pen.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 340px;
+    left: 80px;
+    transform: rotate(-120deg);
+    overflow: hidden;
+  }
+}
 .guide-detail {
   width: 110px;
   height: 70px;

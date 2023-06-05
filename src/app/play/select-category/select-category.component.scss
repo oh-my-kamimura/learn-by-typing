@@ -1,0 +1,267 @@
+.title {
+  width: 348px;
+  color: rgba(87, 108, 136, 1);
+  position: absolute;
+  top: 117px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-family: Kiwi Maru;
+  font-weight: Medium;
+  font-size: 26px;
+  opacity: 1;
+  text-align: center;
+}
+
+body {
+  font-size: 14px;
+}
+.score-base {
+  width: 841px;
+  height: 98px;
+  background: rgba(105,136,157,1);
+  opacity: 1;
+  position: relative;
+  top: 200px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: -10;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  .percentage {
+    width: 79px;
+    height: 50px;
+    color: rgba(238,238,238,1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    margin: auto;
+    font-family: Kiwi Maru;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: center;
+    line-height: 50px;
+  }
+  .subtitle{
+    width: 92px;
+    color: rgba(238,238,238,1);
+    position: absolute;
+    left: 145px;
+    font-family: Kiwi Maru;
+    font-weight: Regular;
+    font-size: 16px;
+    opacity: 1;
+    text-align: center;
+    &.memory{
+      top: 20px;
+    }
+    &.question{
+      top: 53px;
+    }
+  }
+  .bar-base {
+    width: 543px;
+    height: 19px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    left: 252px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow: hidden;
+    &.memory{
+      top: 25px;
+    }
+    &.question{
+      top: 58px;
+    }
+    .bar {
+      height: 19px;
+      background: rgba(230,80,30,1);
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      overflow: hidden;
+      &.memory{
+        width: 293px;
+      }
+      &.question{
+        width: 201px;
+      }
+    }
+
+  }
+}
+.select-base {
+  width: 859px;
+  height: 289px;
+  opacity: 1;
+  position: absolute;
+  top: 377px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 0;
+  overflow: visible;
+  .section-base {
+    width: 257px;
+    height: 289px;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    &.left{
+      right: auto;
+      left: 0;
+    }
+    &.center{
+      right: 0;
+      left: 0;
+    }
+    &.right{
+      right: 0;
+      left: auto;
+    }
+    .subtitle {
+      width: 255px;
+      height: 50px;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      left: 2px;
+      .icon {
+        width: 32px;
+        height: 32px;
+        opacity: 1;
+        position: absolute;
+        top: 5px;
+        left: 48px;
+        &.strategy{
+          background: url("../../../assets/section-strategy.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+        }
+        &.management{
+          background: url("../../../assets/section-management.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+        }
+        &.technology{
+          background: url("../../../assets/section-technology.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+        }
+      }
+      .name {
+        width: 159px;
+        color: rgba(105,136,157,1);
+        position: absolute;
+        top: 0px;
+        left: 66px;
+        font-family: Kiwi Maru;
+        font-weight: Regular;
+        font-size: 21px;
+        opacity: 1;
+        text-align: center;
+      }
+    }
+    .category {
+      width: 257px;
+      height: 43px;
+      opacity: 1;
+      position: absolute;
+      left: 0px;
+      .rectangle {
+        width: 257px;
+        height: 43px;
+        background: rgba(252,252,252,1);
+        opacity: 1;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        border: 1px solid rgba(85,85,85,1);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        overflow: hidden;
+      }
+      .name {
+        width: 231px;
+        color: rgba(85,85,85,1);
+        position: absolute;
+        top: 9px;
+        left: 17px;
+        font-family: Kiwi Maru;
+        font-weight: Regular;
+        font-size: 15px;
+        opacity: 1;
+        text-align: left;
+      }
+    }
+    .summary {
+      width: 257px;
+      height: 43px;
+      background: url("../../../assets/section-strategy.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      opacity: 1;
+      position: absolute;
+      top: 246px;
+      left: 0px;
+      .rectangle {
+        width: 257px;
+        height: 43px;
+        background: rgba(105,136,157,1);
+        opacity: 1;
+        position: relative;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        top: 0px;
+        left: 0px;
+      }
+      .name {
+        width: 231px;
+        color: rgba(255,255,255,1);
+        position: absolute;
+        top: 9px;
+        left: 17px;
+        font-family: Kiwi Maru;
+        font-weight: Medium;
+        font-size: 16px;
+        opacity: 1;
+        text-align: left;
+      }
+    }
+    .n1{
+      top: 75px;
+    }
+    .n2{
+      top: 132px;
+    }
+    .n3{
+      top: 189px;
+    }
+    .n4{
+      top: 246px;
+    }
+  }
+}
