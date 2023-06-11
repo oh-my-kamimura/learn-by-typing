@@ -25,7 +25,7 @@
   .rectangle {
     width: 175px;
     height: 200px;
-    background: rgba(230, 230, 230, 0.5);
+    background: rgba(230, 230, 230, 0.2);
     opacity: 1;
     position: absolute;
     margin: auto;
@@ -57,7 +57,7 @@
       transform: scale(1.07);
     }
     &.disable-filter {
-      background: rgba(245, 245, 245, 0.75);
+      background: rgba(245, 245, 245, 0.3);
       border: 1.5px solid rgba(204, 204, 204, 1);
       overflow: hidden;
       .name {
