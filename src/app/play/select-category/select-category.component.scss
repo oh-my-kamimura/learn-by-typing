@@ -9,32 +9,24 @@
   font-family: Kiwi Maru;
   font-weight: Medium;
   font-size: 26px;
-  opacity: 1;
   text-align: center;
 }
 
-body {
-  font-size: 14px;
-}
 .score-base {
   width: 841px;
   height: 98px;
-  background: rgba(105,136,157,1);
-  opacity: 1;
-  position: relative;
+  background: rgba(105, 136, 157, 1);
+  position: absolute;
   top: 200px;
   left: 0;
   right: 0;
-  margin: 0 auto;
-  z-index: auto;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  margin: auto;
+  border-radius: 10px;
   .percentage {
     width: 79px;
     height: 50px;
-    color: rgba(238,238,238,1);
+    line-height: 50px;
+    color: rgba(238, 238, 238, 1);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -43,104 +35,75 @@ body {
     font-family: Kiwi Maru;
     font-weight: Regular;
     font-size: 24px;
-    opacity: 1;
     text-align: center;
-    line-height: 50px;
   }
-  .subtitle{
-    width: 92px;
-    color: rgba(238,238,238,1);
-    position: absolute;
-    left: 145px;
-    font-family: Kiwi Maru;
-    font-weight: Regular;
-    font-size: 16px;
-    opacity: 1;
-    text-align: center;
-    &.memory{
-      top: 20px;
-    }
-    &.question{
-      top: 53px;
-    }
-  }
+  $bar-height: 34px;
   .bar-base {
-    width: 543px;
-    height: 19px;
-    background: rgba(217,217,217,1);
-    opacity: 1;
+    height: 70px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
     position: absolute;
-    left: 252px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    overflow: hidden;
-    &.memory{
-      top: 25px;
-    }
-    &.question{
-      top: 58px;
-    }
-    .bar {
-      height: 19px;
-      background: rgba(230,80,30,1);
-      opacity: 1;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      overflow: hidden;
-      &.memory{
-        width: 293px;
+    top: 0;
+    bottom: 0;
+    left: 145px;
+    margin: auto;
+    .bar-box {
+      display: flex;
+      width: 700px;
+      height: $bar-height;
+      .subtitle {
+        width: 92px;
+        height: $bar-height;
+        line-height: $bar-height;
+        color: rgba(220, 220, 220, 1);
+        font-family: Kiwi Maru;
+        font-weight: Regular;
+        font-size: 16px;
+        text-align: center;
       }
-      &.question{
-        width: 201px;
+      .bar-back {
+        width: 543px;
+        height: 17px;
+        background: rgba(217, 217, 217, 1);
+        position: relative;
+        border-radius: 5px;
+        margin: auto 0 auto 10px;
+        .bar {
+          height: 17px;
+          background: rgba(230, 80, 30, 1);
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 5px;
+          &.memory   { width: 30%; }
+          &.question { width: 50%; }
+        }
       }
     }
-
   }
 }
 .select-base {
-  width: 859px;
-  height: 289px;
-  opacity: 1;
+  width: 890px;
+  height: 500px;
   position: absolute;
   top: 352px;
   left: 0;
   right: 0;
   margin: 0 auto;
-  padding: 0;
-  overflow: visible;
+  display: flex;
+  justify-content: space-around;
   .section-base {
     width: 257px;
     height: 289px;
     opacity: 1;
-    position: absolute;
-    top: 0;
-    margin: 0 auto;
-    &.left{
-      right: auto;
-      left: 0;
-    }
-    &.center{
-      right: 0;
-      left: 0;
-    }
-    &.right{
-      right: 0;
-      left: auto;
-    }
     .subtitle {
       width: 255px;
       height: 50px;
       opacity: 1;
-      position: absolute;
-      top: 0px;
-      left: 2px;
+      position: relative;
+      margin-bottom: 20px;
       .icon {
         width: 32px;
         height: 32px;
@@ -148,19 +111,20 @@ body {
         position: absolute;
         top: 5px;
         left: 44px;
-        &.strategy{
+        &.strategy {
           background: url("../../../assets/section-strategy.png");
           background-repeat: no-repeat;
           background-position: center center;
           background-size: cover;
         }
-        &.management{
+        &.management {
           background: url("../../../assets/section-management.png");
           background-repeat: no-repeat;
           background-position: center center;
           background-size: cover;
+          left: 35px;
         }
-        &.technology{
+        &.technology {
           background: url("../../../assets/section-technology.png");
           background-repeat: no-repeat;
           background-position: center center;
@@ -169,99 +133,50 @@ body {
       }
       .name {
         width: 159px;
-        color: rgba(105,136,157,1);
+        color: rgba(105, 136, 157, 1);
         position: absolute;
-        top: 0px;
-        left: 66px;
+        top: 4px;
+        left: 68px;
         font-family: Kiwi Maru;
         font-weight: Regular;
         font-size: 21px;
         opacity: 1;
         text-align: center;
       }
+
     }
-    .category {
-      width: 257px;
+    .rectangle {
+      width: 245px;
       height: 43px;
       opacity: 1;
-      position: absolute;
-      left: 0;
-      .rectangle {
-        width: 257px;
-        height: 43px;
-        background: rgba(252,252,252,1);
-        opacity: 1;
-        position: relative;
-        top: 0px;
-        left: 0px;
-        border: 1px solid rgba(85,85,85,1);
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        overflow: hidden;
+      top: 0px;
+      left: 0px;
+      position: relative;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      transition: 0.3s cubic-bezier(0.5, 1, 0.89, 1);
+      &:hover {
+        transform: scale(1.03);
+      }
+      &.category {
+        background: rgba(252, 252, 252, 1);
+        border: 1px solid rgba(85, 85, 85, 1);
+        .name{ color: rgba(85, 85, 85, 1); }
+      }
+      &.summary{
+        background: rgba(105, 136, 157, 1);
+        .name{ color: rgba(255, 255, 255, 1); }
       }
       .name {
         width: 231px;
-        color: rgba(85,85,85,1);
         position: absolute;
         top: 9px;
         left: 17px;
         font-family: Kiwi Maru;
         font-weight: Regular;
         font-size: 15px;
-        opacity: 1;
         text-align: left;
       }
-    }
-    .summary {
-      width: 257px;
-      height: 43px;
-      background: url("../../../assets/section-strategy.png");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      position: absolute;
-      top: 246px;
-      left: 0px;
-      .rectangle {
-        width: 257px;
-        height: 43px;
-        background: rgba(105,136,157,1);
-        opacity: 1;
-        position: relative;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        top: 0px;
-        left: 0px;
-      }
-      .name {
-        width: 231px;
-        color: rgba(255,255,255,1);
-        position: absolute;
-        top: 9px;
-        left: 17px;
-        font-family: Kiwi Maru;
-        font-weight: Medium;
-        font-size: 16px;
-        opacity: 1;
-        text-align: left;
-      }
-    }
-    .n1{
-      top: 75px;
-    }
-    .n2{
-      top: 132px;
-    }
-    .n3{
-      top: 189px;
-    }
-    .n4{
-      top: 246px;
     }
   }
 }
