@@ -1,5 +1,5 @@
 .title {
-  width: 348px;
+  width: 400px;
   color: rgba(87, 108, 136, 1);
   position: absolute;
   top: 117px;
@@ -9,121 +9,90 @@
   font-family: Kiwi Maru;
   font-weight: Medium;
   font-size: 26px;
-  opacity: 1;
   text-align: center;
 }
 .select-base {
-  width: 700px;
+  width: 740px;
   height: 461px;
-  opacity: 1;
   position: absolute;
-  top: 200px;
+  top: 190px;
   left: 0;
   right: 0;
-  margin: auto;
+  margin: 0 auto;
   padding: 10px;
-  .rectangle {
-    width: 175px;
-    height: 200px;
-    background: rgba(230, 230, 230, 0.2);
-    opacity: 1;
-    position: absolute;
-    margin: auto;
-    border: 1.5px solid rgba(102, 102, 102, 1);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    transition: 0.3s cubic-bezier(0.5, 1, 0.89, 1);
-    &.left {
-      left: 0;
-      right: auto;
-    }
-    &.center {
-      left: 0;
-      right: 0;
-    }
-    &.right {
-      left: auto;
-      right: 0;
-    }
-    &.top {
-      top: 0;
-    }
-    &.bottom {
-      top: 245px;
-    }
-    &:hover:not(.disable-filter) {
-      transform: scale(1.07);
-    }
-    &.disable-filter {
-      background: rgba(245, 245, 245, 0.3);
-      border: 1.5px solid rgba(204, 204, 204, 1);
-      overflow: hidden;
-      .name {
-        color: rgba(100, 100, 100, 0.5);
+  .select-box{
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    // display: -webkit-flex;
+    // -webkit-justify-content: space-around;
+    .rectangle {
+      width: 175px;
+      height: 200px;
+      background: rgba(230, 230, 230, 0.2);
+      opacity: 1;
+      border: 1.5px solid rgba(102, 102, 102, 1);
+      border-radius: 20px;
+      text-decoration: none;
+      transition: 0.3s cubic-bezier(0.5, 1, 0.89, 1);
+      &:hover:not(.disable-filter) {
+        transform: scale(1.07);
       }
-      .line {
-        border-top: 1.5px solid rgba(204, 204, 204, 1);
-      }
-      .icon {
+      &.disable-filter {
         opacity: 0.5;
       }
-    }
-    .name {
-      width: 100%;
-      color: rgba(51, 51, 51, 1);
-      position: absolute;
-      top: 13px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      font-family: Kiwi Maru;
-      font-weight: Light;
-      font-size: 16px;
-      opacity: 1;
-      text-align: center;
-    }
-    .line {
-      width: 100%;
-      height: 1px;
-      z-index: 10;
-      border-top: 1.5px solid rgba(102, 102, 102, 1);
-      position: absolute;
-      top: 50px;
-      left: 0;
-      opacity: 1;
-    }
-    .icon {
-      width: 64px;
-      height: 64px;
-      opacity: 1;
-      position: absolute;
-      top: 96px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      overflow: hidden;
-      &.it-pass {
-        background: url("../../../assets/category-it-pass.png");
+      .name {
+        width: 100%;
+        color: rgba(51, 51, 51, 1);
+        position: relative;
+        top: 13px;
+        margin: 0 auto;
+        font-family: Kiwi Maru;
+        font-weight: Light;
+        font-size: 16px;
+        text-align: center;
       }
-      &.basic-tech {
-        background: url("../../../assets/category-basic-tech.png");
+      .line {
+        width: 100%;
+        height: 1px;
+        z-index: 10;
+        border-top: 1.5px solid rgba(102, 102, 102, 1);
+        position: relative;
+        top: 30px;
+        left: 0;
+        opacity: 1;
       }
-      &.applied-tech {
-        background: url("../../../assets/category-applied-tech.png");
-      }
-      &.satistical-3 {
-        background: url("../../../assets/category-satistical-3.png");
-      }
-      &.satistical-2 {
-        background: url("../../../assets/category-satistical-2.png");
-      }
-      &.bookkeeping-2 {
-        background: url("../../../assets/category-bookkeeping-2.png");
+      .icon {
+        width: 64px;
+        height: 64px;
+        opacity: 1;
+        position: relative;
+        top: 70px;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        overflow: hidden;
+        &.it-pass {
+          background: url("../../../assets/category-it-pass.png");
+        }
+        &.basic-tech {
+          background: url("../../../assets/category-basic-tech.png");
+        }
+        &.applied-tech {
+          background: url("../../../assets/category-applied-tech.png");
+        }
+        &.satistical-3 {
+          background: url("../../../assets/category-satistical-3.png");
+        }
+        &.satistical-2 {
+          background: url("../../../assets/category-satistical-2.png");
+        }
+        &.bookkeeping-2 {
+          background: url("../../../assets/category-bookkeeping-2.png");
+        }
       }
     }
   }
