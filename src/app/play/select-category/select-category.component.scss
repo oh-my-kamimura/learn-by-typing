@@ -77,13 +77,18 @@
           top: 0;
           left: 0;
           border-radius: 5px;
-          &.memory   { width: 30%; }
-          &.question { width: 50%; }
+          &.memory {
+            width: 30%;
+          }
+          &.question {
+            width: 50%;
+          }
         }
       }
     }
   }
 }
+
 .select-base {
   width: 890px;
   height: 500px;
@@ -143,9 +148,9 @@
         opacity: 1;
         text-align: center;
       }
-
     }
     .rectangle {
+      display: inline-block;
       width: 245px;
       height: 43px;
       opacity: 1;
@@ -161,11 +166,15 @@
       &.category {
         background: rgba(252, 252, 252, 1);
         border: 1px solid rgba(85, 85, 85, 1);
-        .name{ color: rgba(85, 85, 85, 1); }
+        .name {
+          color: rgba(85, 85, 85, 1);
+        }
       }
-      &.summary{
+      &.summary {
         background: rgba(105, 136, 157, 1);
-        .name{ color: rgba(255, 255, 255, 1); }
+        .name {
+          color: rgba(255, 255, 255, 1);
+        }
       }
       .name {
         width: 231px;
