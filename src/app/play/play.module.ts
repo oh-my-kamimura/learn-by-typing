@@ -5,7 +5,7 @@ import { PlayRoutingModule } from './play-routing.module';
 import { PlayComponent } from './play.component';
 import { SelectCategoryComponent } from './select-category/select-category.component';
 import { SelectExamComponent } from './select-exam/select-exam.component';
-import { SelectQuestionComponent } from './select-question/select-question.component';
+import { SelectSectionComponent } from './select-section/select-section.component';
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import { SelectQuestionComponent } from './select-question/select-question.compo
     PlayComponent,
     SelectCategoryComponent,
     SelectExamComponent,
-    SelectQuestionComponent
+    SelectSectionComponent
   ],
   imports: [
     CommonModule,
