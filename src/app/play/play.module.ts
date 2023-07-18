@@ -6,6 +6,7 @@ import { PlayComponent } from './play.component';
 import { SelectCategoryComponent } from './select-category/select-category.component';
 import { SelectExamComponent } from './select-exam/select-exam.component';
 import { SelectSectionComponent } from './select-section/select-section.component';
+import { StartComponent } from './start/start.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SelectSectionComponent } from './select-section/select-section.componen
     PlayComponent,
     SelectCategoryComponent,
     SelectExamComponent,
-    SelectSectionComponent
+    SelectSectionComponent,
+    StartComponent
   ],
   imports: [
     CommonModule,

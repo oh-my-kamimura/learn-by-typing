@@ -1,0 +1,106 @@
+.topic-path {
+  width: 336px;
+  color: rgba(105,136,157,1);
+  position: absolute;
+  top: 73px;
+  left: 33px;
+  font-family: Kiwi Maru;
+  font-weight: Regular;
+  font-size: 14px;
+  text-align: left;
+}
+
+.title {
+  width: 348px;
+  color: rgba(87, 108, 136, 1);
+  position: absolute;
+  top: 117px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-family: Kiwi Maru;
+  font-weight: Medium;
+  font-size: 26px;
+  text-align: center;
+}
+.subtitle {
+  width: 800px;
+  height: 50px;
+  color: rgba(105,136,157,1);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 175px;
+  margin: 0 auto;
+  font-family: Kiwi Maru;
+  font-weight: Regular;
+  font-size: 18px;
+  opacity: 1;
+  text-align: center;
+}
+.start-base {
+  height: 600px;
+  width: 700px;
+  position: absolute;
+  top: 240px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  .statement {
+    width: 482px;
+    color: rgba(87,108,136,1);
+    position: relative;
+    top: 90px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-family: Kiwi Maru;
+    font-weight: Regular;
+    font-size: 22px;
+    text-align: center;
+  }
+  .button-base{
+    width: 100%;
+    height: 180px;
+    position: relative;
+    top: 200px;
+    margin: sauto;
+    display: flex;
+    justify-content: center;
+    .button-section {
+      width: 330px;
+      height: 160px;
+      position: relative;
+      margin: 0 10px;
+      .button {
+        width: 280px;
+        height: 52px;
+        margin: 0 auto;
+        background: rgba(230,80,30,1);
+        border-radius: 30px;
+        transition: 0.3s cubic-bezier(0.5, 1, 0.89, 1);
+        &:hover {
+          transform: scale(1.03);
+        }
+        .text {
+          color: rgba(255,255,255,1);
+          font-family: Kiwi Maru;
+          font-weight: Medium;
+          font-size: 18px;
+          line-height: 50px;
+          text-align: center;
+        }
+      }
+      .explanation {
+        width: 100%;
+        color: rgba(230,80,30,1);
+        margin-top: 26px;
+        font-family: Kiwi Maru;
+        font-weight: Regular;
+        font-size: 16px;
+        text-align: center;
+        line-height: 26px;
+      }
+    }
+  }
+}
