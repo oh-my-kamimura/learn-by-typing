@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SelectExamComponent } from './select-exam/select-exam.component';
-import { SelectCategoryComponent } from './select-category/select-category.component';
-import { SelectSectionComponent } from './select-section/select-section.component';
+import { SelectExamComponent } from './select/exam/exam.component';
+import { SelectCategoryComponent } from './select/category/category.component';
+import { SelectSectionComponent } from './select/section/section.component';
 import { StartComponent } from './start/start.component';
 import { PlayComponent } from './play.component';
 
