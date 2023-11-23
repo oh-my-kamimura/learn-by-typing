@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '' , component: PlayComponent,
   children: [
     { path: 'select/exam', component: SelectExamComponent },
-    { path: 'select/category', component: SelectCategoryComponent },
+    { path: 'select/:exam-id/section', component: SelectCategoryComponent },
     { path: 'select/section', component: SelectSectionComponent },
     { path: 'start', component: StartComponent }
   ]}

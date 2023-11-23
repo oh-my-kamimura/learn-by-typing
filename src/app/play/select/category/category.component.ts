@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'lbt-select-category',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectCategoryComponent implements OnInit {
 
-  constructor() { }
+  exam_id: string;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe((params) => (this.exam_id = params['exam-id']));
   }
 
 }
