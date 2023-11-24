@@ -5,7 +5,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -26,7 +28,7 @@ public class Exam {
   @Column
   private boolean isEnable;
 
-//  TODO エラーが発生するため、後ほど修正。
-//  @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)
-//  private List<Category> categories;
+  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "exam")
+  @ToString.Exclude
+  private List<Category> categoryList;
 }

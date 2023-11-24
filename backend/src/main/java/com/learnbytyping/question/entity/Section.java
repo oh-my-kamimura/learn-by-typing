@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,11 +15,20 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
 public class Section {
   @Id
-  private Integer section_id;
-  private String section_name;
-  private Boolean is_enable;
+  @GeneratedValue(strategy=GenerationType.IDENTITY)
+  private Integer sectionId;
 
-  @ManyToOne
-  @JoinColumn(name = "category_id")
+  @Column
+  private String sectionName;
+
+  @Column
+  private Boolean isEnable;
+
+  @Column
+  private int categoryId;
+
+  @ManyToOne(fetch=FetchType.EAGER)
+  @JoinColumn(nullable = false, insertable = false, updatable = false, name = "categoryId")
+  @ToString.Exclude
   private Category category;
 }

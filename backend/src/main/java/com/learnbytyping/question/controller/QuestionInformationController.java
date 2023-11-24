@@ -22,8 +22,18 @@ public class QuestionInformationController {
   }
 
   @RequestMapping("/init")
-  public List<Exam> getExams() {
-    return questionInformationService.getExams();
+  public List<Exam> getInit() {
+    return questionInformationService.getQuestionInformation();
+  }
+
+  @RequestMapping("/test")
+  public void testMethod() {
+    List<Exam> testList = questionInformationService.getQuestionInformation();
+    System.out.println(testList);
+    System.out.println();
+    System.out.println(testList.get(0).getCategoryList());
+    System.out.println();
+    System.out.println(testList.get(0).getCategoryList().get(0).getSectionList());
   }
 
 }
