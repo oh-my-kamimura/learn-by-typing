@@ -66,7 +66,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "learn-by-typing-app:build"
+            "browserTarget": "learn-by-typing-app:build",
+            "proxyConfig": "./src/proxy.conf.json"
           },
           "configurations": {
             "production": {
