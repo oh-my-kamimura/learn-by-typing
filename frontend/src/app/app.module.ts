@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { SignUpComponent } from './form/sign-up/sign-up.component';
 import { LogInComponent } from './form/log-in/log-in.component';
 import { PlayModule } from './play/play.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PlayModule } from './play/play.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PlayModule
+    PlayModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
