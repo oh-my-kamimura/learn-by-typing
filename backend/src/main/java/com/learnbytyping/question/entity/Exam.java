@@ -1,6 +1,7 @@
 package com.learnbytyping.question.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,6 +30,7 @@ public class Exam {
   private boolean isEnable;
 
   @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "exam")
+  @JsonManagedReference
   @ToString.Exclude
   private List<Category> categoryList;
 }

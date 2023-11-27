@@ -1,6 +1,8 @@
 package com.learnbytyping.question.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,6 +27,7 @@ public class Category {
   private String categoryName;
 
   @ManyToOne(fetch=FetchType.EAGER)
+  @JsonBackReference
   @JoinColumn(nullable = false, insertable = false, updatable = false, name = "examId")
   @ToString.Exclude
   private Exam exam;
@@ -33,6 +36,7 @@ public class Category {
   private int examId;
 
   @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "category")
+  @JsonManagedReference
   @ToString.Exclude
   private List<Section> sectionList;
 }

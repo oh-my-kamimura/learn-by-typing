@@ -1,5 +1,6 @@
 package com.learnbytyping.question.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -28,6 +29,7 @@ public class Section {
   private int categoryId;
 
   @ManyToOne(fetch=FetchType.EAGER)
+  @JsonBackReference
   @JoinColumn(nullable = false, insertable = false, updatable = false, name = "categoryId")
   @ToString.Exclude
   private Category category;
