@@ -1,4 +1,4 @@
-<span class="title">ITパスポート</span>
+<span class="title">{{initialData[exam_id].examName}}</span>
 <div class="score-base">
   <span class="percentage">46 %</span>
   <div class="bar-base">
@@ -16,59 +16,17 @@
     </div>
   </div>
 </div>
-<!-- TODO データベースから取得してforで回す -->
 <div class="select-base">
-  <div class="section-base">
+  <div *ngFor="let category of initialData[exam_id].categoryList" class="section-base">
     <div class="subtitle">
+      <!-- TODO ループによってアイコンを変える（strategy/management/technology） -->
       <div class="icon strategy"></div>
-      <span class="name">ストラテジ系</span>
+      <span class="name">{{category.categoryName}}</span>
     </div>
     <!-- TODO セクション選択画面をなくす。ここからタイピング開始画面に遷移。 -->
-    <a class="rectangle category" routerLink="/play/select">
-      <span class="name">企業と法務</span>
+    <a *ngFor="let section of category.sectionList" class="rectangle category" routerLink="/play/select">
+      <span class="name">{{section.sectionName}}</span>
     </a>
-    <div class="rectangle category">
-      <span class="name">経営戦略</span>
-    </div>
-    <div class="rectangle category">
-      <span class="name">システム戦略</span>
-    </div>
-    <div class="rectangle summary">
-      <span class="name">まとめ</span>
-    </div>
-  </div>
-  <div class="section-base">
-    <div class="subtitle">
-      <div class="icon management"></div>
-      <span class="name">マネジメント系</span>
-    </div>
-    <div class="rectangle category">
-      <span class="name">開発技術</span>
-    </div>
-    <div class="rectangle category">
-      <span class="name">プロジェクトマネジメント</span>
-    </div>
-    <div class="rectangle category">
-      <span class="name">サービスマネジメント</span>
-    </div>
-    <div class="rectangle summary">
-      <span class="name">まとめ</span>
-    </div>
-  </div>
-  <div class="section-base">
-    <div class="subtitle">
-      <div class="icon technology"></div>
-      <span class="name">テクノロジ系</span>
-    </div>
-    <div class="rectangle category">
-      <span class="name">技術要素</span>
-    </div>
-    <div class="rectangle category">
-      <span class="name">コンピュータシステム</span>
-    </div>
-    <div class="rectangle category">
-      <span class="name">基礎理論</span>
-    </div>
     <div class="rectangle summary">
       <span class="name">まとめ</span>
     </div>

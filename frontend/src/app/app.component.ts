@@ -11,12 +11,8 @@ import { Exam } from './service/question-data.service';
 export class AppComponent {
   title = 'learn-by-typing-app';
 
-  constructor(private questionDataService: QuestionDataService) {}
-  dataSource: Observable<Exam>;
+  constructor() {}
 
   ngOnInit(): void {
-    this.questionDataService.getInitialData().subscribe((result) => {
-      console.log('初期データを取得しました。', result);
-    });
   }
 }
