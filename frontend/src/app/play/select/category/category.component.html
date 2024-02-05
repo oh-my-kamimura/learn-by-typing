@@ -24,7 +24,7 @@
       <span class="name">{{category.categoryName}}</span>
     </div>
     <!-- TODO セクション選択画面をなくす。ここからタイピング開始画面に遷移。 -->
-    <a *ngFor="let section of category.sectionList" class="rectangle category" routerLink="/play/select">
+    <a *ngFor="let section of category.sectionList" class="rectangle category" routerLink="/start">
       <span class="name">{{section.sectionName}}</span>
     </a>
     <div class="rectangle summary">
