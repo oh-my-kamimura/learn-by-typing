@@ -4,10 +4,10 @@ import { QuestionDataService } from '../../../service/question-data.service';
 
 @Component({
   selector: 'lbt-select-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.scss']
+  templateUrl: './section.component.html',
+  styleUrls: ['./section.component.scss']
 })
-export class SelectCategoryComponent implements OnInit {
+export class SelectSectionComponent implements OnInit {
 
   exam_id: string;
   gameData: object;

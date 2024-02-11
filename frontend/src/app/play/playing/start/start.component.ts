@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { QuestionDataService, Category } from '../../service/question-data.service';
+import { QuestionDataService, Category } from '../../../service/question-data.service';
 
 @Component({
   selector: 'lbt-start',
