@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { tap, shareReplay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +11,17 @@ export class QuestionDataService {
 
   constructor(private http: HttpClient) {}
 
-  private api: string = '/app/init'
+  private getDataUrl: string = '/app/init'
+  private gameDataCache$: Observable<any>;
 
-  getInitialData(): Observable<Exam> {
-    return this.http.get<Exam>(this.api);
+  getGameData(): Observable<any> {
+    if (!this.gameDataCache$) {
+      this.gameDataCache$ = this.http.get(this.getDataUrl).pipe(
+        tap(data => console.log('data fetched', data)),
+        shareReplay(1)
+      );
+    }
+    return this.gameDataCache$;
   }
 }
 

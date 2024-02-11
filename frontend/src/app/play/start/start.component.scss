@@ -43,15 +43,17 @@ a{
   margin: auto;
   .statement {
     width: 482px;
+    height: 40px;
     color: rgba(87,108,136,1);
     position: relative;
-    top: 90px;
+    top: 70px;
     left: 0;
     right: 0;
     margin: auto;
     font-weight: Regular;
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
+    line-height: 50px;
   }
   .button-base{
     width: 100%;

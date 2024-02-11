@@ -1,7 +1,12 @@
-<div class="title">ITパスポート</div>
-<div class="subtitle">ストラテジ系 - 企業と法務</div>
+<span class="title">{{gameData[exam_id].examName}}</span>
+<div class="subtitle">
+  {{gameData[exam_id].categoryList[category_id].categoryName}}
+  【{{gameData[exam_id].categoryList[category_id].sectionList[section_id].sectionName}}】</div>
 <div class="start-base">
-  <div class="statement">モードを選択してください</div>
+  <div class="statement">
+    モードを選択してください。<br>
+    クリックすると、３秒後にスタートします。
+  </div>
   <div class="button-base">
     <div class="button-section">
       <a routerLink="/playing-nomal">
