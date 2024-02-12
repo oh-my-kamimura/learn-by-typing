@@ -9,13 +9,13 @@ import { QuestionDataService } from '../../../service/question-data.service';
 })
 export class SelectSectionComponent implements OnInit {
 
-  exam_id: string;
+  examId: string;
   gameData: object;
 
   constructor(private route: ActivatedRoute, private questionDataService: QuestionDataService) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => (this.exam_id = params['exam-id']));
+    this.route.params.subscribe((params) => (this.examId = params['exam-id']));
     this.questionDataService.getGameData().subscribe((result) => {
       this.gameData = result;
       console.log('ゲームデータを取得しました。', this.gameData);
