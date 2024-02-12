@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { QuestionDataService} from '../../service/question-data.service';
+import { QuestionDataService, Exam } from '../../service/question-data.service';
 
 @Component({
   selector: 'lbt-playing',
@@ -9,10 +9,9 @@ import { QuestionDataService} from '../../service/question-data.service';
 })
 export class PlayingComponent implements OnInit {
 
-  examId: string;
-  categoryId: string;
-  sectionId: string;
-  gameData: object;
+  examId: number;
+  categoryId: number;
+  sectionId: number;
 
   constructor(private route: ActivatedRoute, private questionDataService: QuestionDataService) { }
 
@@ -22,10 +21,10 @@ export class PlayingComponent implements OnInit {
       this.categoryId = params['category-id'],
       this.sectionId = params['section-id']
     ));
-    this.questionDataService.getGameData().subscribe((result) => {
-      this.gameData = result;
-      console.log('ゲームデータを取得しました。', this.gameData);
-    });
+  }
+
+  getExam(examId: number): Exam{
+    return this.questionDataService.getExam(this.examId);
   }
 
 }

@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '' , component: PlayComponent,
   children: [
     { path: 'select/exam', component: SelectExamComponent },
-    { path: 'select/section/:exam-id', component: SelectSectionComponent },
+    { path: 'select/section', component: SelectSectionComponent },
     {
       path: 'playing',
       loadChildren: () => import('./playing/playing.module').then(m => m.PlayingModule),

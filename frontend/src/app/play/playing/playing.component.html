@@ -1,8 +1,8 @@
-<span class="title">{{ gameData[examId].examName }}</span>
+<span class="title">{{ getExam(examId).examName }}</span>
 <div class="subtitle">
-  {{ gameData[examId].categoryList[categoryId].categoryName }}
+  {{ getExam(examId).getCategory(categoryId).categoryName }}
   【
-    {{gameData[examId].categoryList[categoryId].sectionList[sectionId].sectionName}}
+    {{getExam(examId).getCategory(categoryId).getSection(sectionId).sectionName}}
   】
 </div>
 <div class="start-base">

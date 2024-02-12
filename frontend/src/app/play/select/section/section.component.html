@@ -1,4 +1,4 @@
-<span class="title">{{ gameData[examId].examName }}</span>
+<span class="title">{{ getExam(examId).examName }}</span>
 <div class="score-base">
   <span class="percentage">46 %</span>
   <div class="bar-base">
@@ -18,7 +18,7 @@
 </div>
 <div class="select-base">
   <div
-    *ngFor="let category of gameData[examId].categoryList"
+    *ngFor="let category of getExam(examId).categoryList"
     class="section-base"
   >
     <div class="subtitle">
