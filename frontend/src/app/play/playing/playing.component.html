@@ -1,7 +1,10 @@
-<span class="title">{{gameData[examId].examName}}</span>
-<div class="subtitle" childData = gameData>
-  {{gameData[examId].categoryList[categoryId].categoryName}}
-  【{{gameData[examId].categoryList[categoryId].sectionList[sectionId].sectionName}}】</div>
+<span class="title">{{ gameData[examId].examName }}</span>
+<div class="subtitle">
+  {{ gameData[examId].categoryList[categoryId].categoryName }}
+  【
+    {{gameData[examId].categoryList[categoryId].sectionList[sectionId].sectionName}}
+  】
+</div>
 <div class="start-base">
   <router-outlet></router-outlet>
 </div>

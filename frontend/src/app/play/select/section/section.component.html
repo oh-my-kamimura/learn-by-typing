@@ -1,4 +1,4 @@
-<span class="title">{{gameData[examId].examName}}</span>
+<span class="title">{{ gameData[examId].examName }}</span>
 <div class="score-base">
   <span class="percentage">46 %</span>
   <div class="bar-base">
@@ -17,15 +17,26 @@
   </div>
 </div>
 <div class="select-base">
-  <div *ngFor="let category of gameData[examId].categoryList" class="section-base">
+  <div
+    *ngFor="let category of gameData[examId].categoryList"
+    class="section-base"
+  >
     <div class="subtitle">
       <!-- TODO ループによってアイコンを変える（strategy/management/technology） -->
       <div class="icon strategy"></div>
-      <span class="name">{{category.categoryName}}</span>
+      <span class="name">{{ category.categoryName }}</span>
     </div>
-    <!-- TODO セクション選択画面をなくす。ここからタイピング開始画面に遷移。 -->
-    <a *ngFor="let section of category.sectionList" class="rectangle category" routerLink="/playing/{{examId}}/{{category.categoryId}}/{{section.sectionId}}/start">
-      <span class="name">{{section.sectionName}}</span>
+    <a
+      *ngFor="let section of category.sectionList"
+      class="rectangle category"
+      routerLink="/playing/start"
+      [queryParams]="{
+        'exam-id': examId,
+        'category-id': category.categoryId,
+        'section-id': section.sectionId
+      }"
+    >
+      <span class="name">{{ section.sectionName }}</span>
     </a>
     <div class="rectangle summary">
       <span class="name">まとめ</span>
