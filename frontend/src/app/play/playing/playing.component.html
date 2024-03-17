@@ -1,8 +1,8 @@
-<span class="title">{{ getExam(examId).examName }}</span>
+<span class="title">{{ getSelectedExam().examName }}</span>
 <div class="subtitle">
-  {{ getExam(examId).getCategory(categoryId).categoryName }}
+  {{ getSelectedCategory().categoryName }}
   【
-    {{getExam(examId).getCategory(categoryId).getSection(sectionId).sectionName}}
+    {{ getSelectedSection().sectionName}}
   】
 </div>
 <div class="start-base">

@@ -25,15 +25,17 @@ export class QuestionDataService {
         const exam = new Exam();
         exam.examId = data.examId;
         exam.examName = data.examName;
-        exam.isEnable = data.isEnable;
+        exam.isEnable = data.enable;
         exam.categoryList = data.categoryList.map((categoryData) => {
           const category = new Category();
           category.categoryId = categoryData.categoryId;
           category.categoryName = categoryData.categoryName;
+          category.examId = categoryData.examId;
           category.sectionList = categoryData.sectionList.map((sectionData) => {
             const section = new Section();
             section.sectionId = sectionData.sectionId;
             section.sectionName = sectionData.sectionName;
+            section.categoryId = sectionData.categoryId;
             section.isEnable = sectionData.isEnable;
             return section;
           });
@@ -42,7 +44,7 @@ export class QuestionDataService {
         return exam;
       });
       console.log('ゲームデータを取得しました。', this.examList);
-    });;
+    });
   }
 
   getExam(examId: number): Exam {
@@ -56,7 +58,7 @@ export class QuestionDataService {
 
 export class Exam {
   examId: number;
-  public examName: string;
+  examName: string;
   isEnable: boolean;
   categoryList: Category[];
 
@@ -68,6 +70,7 @@ export class Exam {
 export class Category {
   categoryId: number;
   categoryName: string;
+  examId: number;
   sectionList: Section[];
 
   public getSection(sectionId: number): Section {
@@ -78,5 +81,6 @@ export class Category {
 export class Section {
   sectionId: number;
   sectionName: string;
+  categoryId: number;
   isEnable: boolean;
 }
