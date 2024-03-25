@@ -28,11 +28,13 @@ export class PlayingComponent implements OnInit {
         (this.sectionId = params['section-id'])
       )
     );
-    this.playingDataService.setGameInfo(
-      this.examId,
-      this.categoryId,
-      this.sectionId
-    );
+    if(this.examId && this.categoryId && this.sectionId){
+      this.playingDataService.setGameInfo(
+        this.examId,
+        this.categoryId,
+        this.sectionId
+      );
+    }
   }
 
   getSelectedExam(): Exam {

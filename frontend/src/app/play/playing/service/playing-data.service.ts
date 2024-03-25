@@ -14,13 +14,33 @@ export class PlayingDataService {
   private selectedCategoryId: number;
   private selectedSectionId: number;
 
-  constructor(private questionDataService: QuestionDataService) {}
+  constructor(private questionDataService: QuestionDataService) {
+    this.loadGameInfo();
+  }
 
   setGameInfo(examId: number, categoryId: number, sectionId: number) {
     this.selectedExamId = examId;
     this.selectedCategoryId = categoryId;
     this.selectedSectionId = sectionId;
-    console.log('Setting game infomation.');
+    console.log('Setting game information.');
+    this.saveGameInfo();
+  }
+
+  private saveGameInfo() {
+    sessionStorage.setItem('selectedExamId', this.selectedExamId.toString());
+    sessionStorage.setItem('selectedCategoryId', this.selectedCategoryId.toString());
+    sessionStorage.setItem('selectedSectionId', this.selectedSectionId.toString());
+  }
+
+  private loadGameInfo() {
+    const examId = sessionStorage.getItem('selectedExamId');
+    const categoryId = sessionStorage.getItem('selectedCategoryId');
+    const sectionId = sessionStorage.getItem('selectedSectionId');
+    if (examId && categoryId && sectionId) {
+      this.selectedExamId = +examId;
+      this.selectedCategoryId = +categoryId;
+      this.selectedSectionId = +sectionId;
+    }
   }
 
   getSelectedExam(): Exam {
