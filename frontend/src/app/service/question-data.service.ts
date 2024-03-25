@@ -15,6 +15,7 @@ export class QuestionDataService {
   private examListCache$: Observable<any>;
   private examList: Array<Exam>;
 
+  // 　TODO: 資格ごとに問題を取得できるようにも修正する。
   getExamList() {
     this.examListCache$ = this.http.get(this.getDataUrl).pipe(
       tap((data) => console.log('data fetched', data)),
