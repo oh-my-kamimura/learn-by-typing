@@ -52,7 +52,7 @@ export class QuestionDataService {
     if (!this.examListCache$) {
       this.getExamList();
     }
-    return this.examList[examId - 1];
+    return this.examList.find(exam => exam.examId == examId);
   }
 
 }
@@ -64,7 +64,7 @@ export class Exam {
   categoryList: Category[];
 
   public getCategory(categoryId: number): Category {
-    return this.categoryList[categoryId - 1];
+    return this.categoryList.find(category => category.categoryId == categoryId);
   }
 }
 
@@ -75,7 +75,7 @@ export class Category {
   sectionList: Section[];
 
   public getSection(sectionId: number): Section {
-    return this.sectionList[sectionId - 1];
+    return this.sectionList.find(section => section.sectionId == sectionId);
   }
 }
 
