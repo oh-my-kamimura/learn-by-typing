@@ -28,13 +28,7 @@ public class QuestionInformationService {
     this.sectionRepository = null;
   }
 
-  public List<Exam> getQuestionInformation() {
-//    List<Exam> examList = examRepository.findAll();
-//    for (Exam exam: examList) {
-//      exam.setCategoryList(categoryRepository.findAll());
-//    }
-//    List<Section> sectionList = sectionRepository.findAll();
-
+  public List<Exam> getExamInformation() {
     return examRepository.findAll();
   }
 }

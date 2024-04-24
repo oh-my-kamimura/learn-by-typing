@@ -23,10 +23,7 @@ export class PlayingDataService {
     this.selectedCategoryId = categoryId;
     this.selectedSectionId = sectionId;
     console.log('Setting game information.');
-    this.saveGameInfo();
-  }
 
-  private saveGameInfo() {
     sessionStorage.setItem('selectedExamId', this.selectedExamId.toString());
     sessionStorage.setItem('selectedCategoryId', this.selectedCategoryId.toString());
     sessionStorage.setItem('selectedSectionId', this.selectedSectionId.toString());
