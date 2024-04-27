@@ -14,7 +14,9 @@ export class PlayingDataService {
   private selectedExamId: number;
   private selectedCategoryId: number;
   private selectedSectionId: number;
-  private questionList: Array<Question>;
+
+  private playingQuestionList: Array<Question>;
+  private playingQuestionNum: number = Math.floor(Math.random() * 3);
 
   constructor(private questionDataService: QuestionDataService) {
     this.loadGameInfo();
@@ -31,7 +33,7 @@ export class PlayingDataService {
     sessionStorage.setItem('selectedSectionId', this.selectedSectionId.toString());
   }
 
-  private loadGameInfo() {
+  loadGameInfo() {
     const examId = sessionStorage.getItem('selectedExamId');
     const categoryId = sessionStorage.getItem('selectedCategoryId');
     const sectionId = sessionStorage.getItem('selectedSectionId');
@@ -59,7 +61,13 @@ export class PlayingDataService {
       .getSection(this.selectedSectionId);
   }
 
-  getQuestionList(){
-    this.questionList = this.questionDataService.getQuestionList(this.selectedSectionId, 3);
+  fetchPlayingQuestionList(){
+    this.questionDataService.fetchPlayingQuestionList(this.selectedSectionId, 3).subscribe(questions => {
+      this.playingQuestionList = questions;
+    });
+  }
+
+  getPlayingQuestion(): Question{
+    return this.playingQuestionList[this.playingQuestionNum];
   }
 }

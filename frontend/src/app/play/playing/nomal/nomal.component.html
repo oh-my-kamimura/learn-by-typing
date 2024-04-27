@@ -5,13 +5,16 @@
 <ng-template #otherContent>
   <div class="nomal-main">
     <div class="statement">
-      ネットワーク上で不正なアクセスを防止するためのセキュリティ装置を「ファイアウォール」という。
+      {{ getPlayingQuestion().statement }}
+      <!-- ネットワーク上で不正なアクセスを防止するためのセキュリティ装置を「ファイアウォール」という。 -->
     </div>
     <div class="line"></div>
     <div class="hiragana">
-      ねっとわーくじょうでふせいなあくせすをぼうしするためのせきゅりてぃそうちを「ふぁいあうぉーる」という。
+      {{ getPlayingQuestion().hiragana }}
+      <!-- ねっとわーくじょうでふせいなあくせすをぼうしするためのせきゅりてぃそうちを「ふぁいあうぉーる」という。 -->
     </div>
     <div class="english">
+      <!-- TODO ひらがなから変換 -->
       NETTOWA-KUJOUDEHUSEINAAKUSESUWOBOUSISURUTAMENOSEKYURITHISOUTIWO
       [FAIAUXO-RU]TOIU.
     </div>

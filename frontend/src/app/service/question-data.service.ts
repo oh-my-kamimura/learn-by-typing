@@ -9,15 +9,15 @@ import { tap, shareReplay } from 'rxjs/operators';
 
 export class QuestionDataService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {};
 
-  private getInitDataUrl: string = '/app/init';
+  private fetchInitDataUrl: string = '/app/init';
   private examListCache$: Observable<any>;
   private examList: Array<Exam>;
 
   // 　TODO: 資格ごとに問題を取得できるように修正する。
-  getExamList() {
-    this.examListCache$ = this.http.get(this.getInitDataUrl).pipe(
+  fetchExamList(examId: number) {
+    this.examListCache$ = this.http.get(this.fetchInitDataUrl).pipe(
       tap((data) => console.log('data fetched', data)),
       shareReplay(1)
     );
@@ -50,25 +50,18 @@ export class QuestionDataService {
 
   getExam(examId: number): Exam {
     if (!this.examListCache$) {
-      this.getExamList();
+      this.fetchExamList(examId);
     }
     return this.examList.find(exam => exam.examId == examId);
   }
 
-  private getQuestionUrl: string = '/app/question';
-  private getQuestionCache$: Observable<any>;
+  private fetchQuestionUrl: string = '/app/question';
 
-  getQuestionList(sectionId: number, questionNum: number): Array<Question> {
-      this.getQuestionCache$ = this.http.get<Array<Question>>(this.getQuestionUrl + "/" + sectionId).pipe(
+  fetchPlayingQuestionList(sectionId: number, questionNum: number): Observable<Array<Question>> {
+      return this.http.get<Array<Question>>(this.fetchQuestionUrl + "/" + sectionId).pipe(
       tap((data) => console.log('data fetched', data)),
       shareReplay(1)
     );
-    let questions: Array<Question> = [];
-    this.getQuestionCache$.subscribe(data => {
-      questions = data;
-      console.log('問題データが取得されました。', questions);
-    });
-    return questions;
   }
 
 }
