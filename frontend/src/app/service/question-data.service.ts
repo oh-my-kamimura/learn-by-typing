@@ -11,13 +11,13 @@ export class QuestionDataService {
 
   constructor(private http: HttpClient) {}
 
-  private getDataUrl: string = '/app/init';
+  private getInitDataUrl: string = '/app/init';
   private examListCache$: Observable<any>;
   private examList: Array<Exam>;
 
   // 　TODO: 資格ごとに問題を取得できるように修正する。
   getExamList() {
-    this.examListCache$ = this.http.get(this.getDataUrl).pipe(
+    this.examListCache$ = this.http.get(this.getInitDataUrl).pipe(
       tap((data) => console.log('data fetched', data)),
       shareReplay(1)
     );
@@ -44,7 +44,7 @@ export class QuestionDataService {
         });
         return exam;
       });
-      console.log('ゲームデータを取得しました。', this.examList);
+      console.log('試験情報が取得されました。', this.examList);
     });
   }
 
@@ -53,6 +53,22 @@ export class QuestionDataService {
       this.getExamList();
     }
     return this.examList.find(exam => exam.examId == examId);
+  }
+
+  private getQuestionUrl: string = '/app/question';
+  private getQuestionCache$: Observable<any>;
+
+  getQuestionList(sectionId: number, questionNum: number): Array<Question> {
+      this.getQuestionCache$ = this.http.get<Array<Question>>(this.getQuestionUrl + "/" + sectionId).pipe(
+      tap((data) => console.log('data fetched', data)),
+      shareReplay(1)
+    );
+    let questions: Array<Question> = [];
+    this.getQuestionCache$.subscribe(data => {
+      questions = data;
+      console.log('問題データが取得されました。', questions);
+    });
+    return questions;
   }
 
 }
@@ -84,4 +100,13 @@ export class Section {
   sectionName: string;
   categoryId: number;
   isEnable: boolean;
+}
+
+export class Question {
+  questionId: number;
+  sectionId: number;
+  statement: string;
+  hiragana: string;
+  imagePath: string;
+  explanation: string;
 }

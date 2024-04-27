@@ -3,9 +3,11 @@ package com.learnbytyping.question.service;
 import com.learnbytyping.question.entity.Category;
 import com.learnbytyping.question.entity.Exam;
 import com.learnbytyping.question.entity.Section;
+import com.learnbytyping.question.entity.Question;
 import com.learnbytyping.question.repository.CategoryRepository;
 import com.learnbytyping.question.repository.ExamRepository;
 import com.learnbytyping.question.repository.SectionRepository;
+import com.learnbytyping.question.repository.QuestionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,13 +24,20 @@ public class QuestionInformationService {
   private final CategoryRepository categoryRepository;
   @Autowired
   private final SectionRepository sectionRepository;
+  @Autowired
+  private final QuestionRepository questionRepository;
   public QuestionInformationService() {
     this.examRepository = null;
     this.categoryRepository = null;
     this.sectionRepository = null;
+    this.questionRepository = null;
   }
 
   public List<Exam> getExamInformation() {
     return examRepository.findAll();
+  }
+
+  public List<Question> getQuestionBySectionId(int sectionId) {
+    return questionRepository.findBySectionId(sectionId);
   }
 }

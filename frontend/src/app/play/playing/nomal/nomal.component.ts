@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { PlayingDataService } from '../service/playing-data.service';
 
 @Component({
   selector: 'lbt-nomal',
@@ -11,11 +12,14 @@ export class NomalComponent implements OnInit {
   public showCountdown: boolean = true;
   public countdownMessage: string;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {
-  }
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private playingDataService: PlayingDataService
+  ) {}
 
   ngOnInit(): void {
     this.countdownMessage = this.countdown.toString();
+    this.playingDataService.getQuestionList();
     this.startCountdown();
   }
 

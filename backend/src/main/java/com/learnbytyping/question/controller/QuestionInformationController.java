@@ -1,5 +1,7 @@
 package com.learnbytyping.question.controller;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
+import com.learnbytyping.question.entity.Question;
 import com.learnbytyping.question.service.QuestionInformationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,11 @@ public class QuestionInformationController {
   @RequestMapping("/init")
   public List<Exam> getInit() {
     return questionInformationService.getExamInformation();
+  }
+
+  @RequestMapping("/question/{sectionId}")
+  public List<Question> getQuestionList(@PathVariable("sectionId") int sectionId) {
+    return questionInformationService.getQuestionBySectionId(sectionId);
   }
 
   @RequestMapping("/test")

@@ -4,6 +4,7 @@ import {
   Exam,
   Category,
   Section,
+  Question
 } from 'src/app/service/question-data.service';
 
 @Injectable({
@@ -13,6 +14,7 @@ export class PlayingDataService {
   private selectedExamId: number;
   private selectedCategoryId: number;
   private selectedSectionId: number;
+  private questionList: Array<Question>;
 
   constructor(private questionDataService: QuestionDataService) {
     this.loadGameInfo();
@@ -55,5 +57,9 @@ export class PlayingDataService {
       .getExam(this.selectedExamId)
       .getCategory(this.selectedCategoryId)
       .getSection(this.selectedSectionId);
+  }
+
+  getQuestionList(){
+    this.questionList = this.questionDataService.getQuestionList(this.selectedSectionId, 3);
   }
 }
