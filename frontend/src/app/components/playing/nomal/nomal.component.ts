@@ -1,11 +1,16 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { PlayingDataService } from '../../../services/playing-data.service';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { EmielService } from '../../../services/emiel.service';
+
+import { TypingComponent } from './typing/typing.component';
+import { RecordComponent } from './record/record.component';
 
 @Component({
   selector: 'lbt-nomal',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterOutlet, TypingComponent, RecordComponent],
   templateUrl: './nomal.component.html',
   styleUrls: ['./nomal.component.scss', '/src/styles.scss']
 })
@@ -17,11 +22,13 @@ export class NomalComponent implements OnInit {
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
-    public playingDataService: PlayingDataService
+    public playingDataService: PlayingDataService,
+    public emielService: EmielService
   ) {}
 
   ngOnInit(): void {
     this.playingDataService.fetchPlayingQuestionList();
+    this.emielService.detectLayout();
     this.countdownMessage = this.countdown.toString();
     this.startCountdown();
   }

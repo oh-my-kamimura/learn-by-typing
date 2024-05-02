@@ -62,13 +62,13 @@ export class PlayingDataService {
     return category.getSection(this.selectedSectionId);
   }
 
-  fetchPlayingQuestionList(){
+  fetchPlayingQuestionList() {
     this.questionDataService.fetchPlayingQuestionList(this.selectedSectionId, 3).subscribe(questions => {
       this.playingQuestionList = questions;
     });
   }
 
-  getPlayingQuestion(): Question{
-    return this.playingQuestionList[this.playingQuestionNum];
+  getPlayingQuestionList(): Question[] {
+    return this.playingQuestionList;
   }
 }

@@ -1,0 +1,27 @@
+<div class="statement">
+  <span class="finished">
+    <!-- {{ automatons[wordIndex].finishedWord }} -->
+  </span>
+  {{ playingDataService.getPlayingQuestionList()[wordIndex].statement }}
+  <!-- {{ automatons[wordIndex].pendingWord }} -->
+</div>
+
+<div class="line"></div>
+
+<div class="hiragana">
+  <span class="finished">
+    {{ automatons[wordIndex].finishedWord }}
+  </span>
+  {{ automatons[wordIndex].pendingWord }}
+</div>
+
+<div class="english">
+  <span class="finished">
+    {{ automatons[wordIndex].finishedRoman }}
+  </span>
+  {{ automatons[wordIndex].pendingRoman }}
+</div>
+
+<div class="lastInputKey">
+  Key: <code style="border: 1px solid gray; padding: 0.2rem">{{ lastInputKey?.key }}</code>
+</div>

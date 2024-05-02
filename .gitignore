@@ -10,7 +10,7 @@
 ## Angular ##
 # compiled output
 dist/
-tmp/ 
+tmp/
 app/**/*.js
 app/**/*.js.map
 
@@ -197,3 +197,4 @@ replay_pid*
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/java,angular,visualstudiocode,intellij
+frontend/emiel_type

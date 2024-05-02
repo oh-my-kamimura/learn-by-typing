@@ -1,0 +1,33 @@
+<div>
+  <h1>Finished!</h1>
+  <div style="display: flex;">
+    <table style="border: 0">
+      <tr>
+        <td>inputs</td>
+        <td>{{ totalSucceededKeys }}</td>
+      </tr>
+      <tr>
+        <td>miss</td>
+        <td>{{ totalMissedKeys }}</td>
+      </tr>
+      <tr>
+        <td>avg latency</td>
+        <td>{{ avgLatency }}ms</td>
+      </tr>
+      <tr>
+        <td>accuracy</td>
+        <td>
+          {{ overallAccuracy }} %
+        </td>
+      </tr>
+    </table>
+  </div>
+  <ul>
+    <li *ngFor="let r of getRecords(); let i = index">
+      {{ r.word }} latency:{{ r.latency }}ms kpm:{{ r.kpm }} rkpm:{{
+        r.rkpm
+      }}
+      acc:{{ r.accuracy * 100 | number : "1.2-2" }}%
+    </li>
+  </ul>
+</div>
