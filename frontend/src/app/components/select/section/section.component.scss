@@ -1,0 +1,193 @@
+.play-base {
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  width: 348px;
+  color: rgba(87, 108, 136, 1);
+  position: absolute;
+  top: 117px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-weight: Medium;
+  font-size: 26px;
+  text-align: center;
+}
+
+.score-base {
+  width: 841px;
+  height: 98px;
+  background: rgba(105, 136, 157, 1);
+  position: absolute;
+  top: 200px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 10px;
+  .percentage {
+    width: 79px;
+    height: 50px;
+    line-height: 50px;
+    color: rgba(238, 238, 238, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    margin: auto;
+
+    font-weight: Regular;
+    font-size: 24px;
+    text-align: center;
+  }
+  $bar-height: 34px;
+  .bar-base {
+    height: 70px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 145px;
+    margin: auto;
+    .bar-box {
+      display: flex;
+      width: 700px;
+      height: $bar-height;
+      .subtitle {
+        width: 92px;
+        height: $bar-height;
+        line-height: $bar-height;
+        color: rgba(220, 220, 220, 1);
+        font-weight: Regular;
+        font-size: 16px;
+        text-align: center;
+      }
+      .bar-back {
+        width: 543px;
+        height: 17px;
+        background: rgba(217, 217, 217, 1);
+        position: relative;
+        border-radius: 5px;
+        margin: auto 0 auto 10px;
+        .bar {
+          height: 17px;
+          background: rgba(230, 80, 30, 1);
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 5px;
+          &.memory {
+            width: 30%;
+          }
+          &.question {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.select-base {
+  width: 890px;
+  height: 500px;
+  position: absolute;
+  top: 352px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  .section-base {
+    width: 257px;
+    height: 289px;
+    opacity: 1;
+    .subtitle {
+      width: 240px;
+      height: 46px;
+      opacity: 1;
+      position: relative;
+      margin: 0 auto 25px;
+      border-bottom: 3px solid rgba(105, 136, 157, 0.8);
+      .icon {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+        position: absolute;
+        top: 6px;
+        left: 38px;
+        &.strategy {
+          background: url("/assets/category/strategy.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+        }
+        &.management {
+          background: url("/assets/category/management.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+          left: 34px;
+        }
+        &.technology {
+          background: url("/assets/category/technology.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+        }
+      }
+      .name {
+        width: 159px;
+        color: rgba(105, 136, 157, 1);
+        position: absolute;
+        top: 6px;
+        left: 58px;
+        font-weight: Regular;
+        font-size: 19px;
+        opacity: 1;
+        text-align: center;
+      }
+    }
+    .rectangle {
+      display: block;
+      width: 245px;
+      height: 43px;
+      opacity: 1;
+      top: 0;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      position: relative;
+      margin-bottom: 14px;
+      border-radius: 10px;
+      transition: 0.3s cubic-bezier(0.5, 1, 0.89, 1);
+      &:hover {
+        transform: scale(1.03);
+      }
+      &.category {
+        background: rgba(252, 252, 252, 1);
+        border: 1px solid rgba(85, 85, 85, 1);
+        color: rgba(85, 85, 85, 1);
+      }
+      &.summary {
+        background: rgba(105, 136, 157, 1);
+        color: rgba(255, 255, 255, 1);
+      }
+      .name {
+        width: 231px;
+        position: absolute;
+        top: 9px;
+        left: 17px;
+        font-weight: Regular;
+        font-size: 15px;
+        text-align: left;
+      }
+    }
+  }
+}

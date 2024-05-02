@@ -10,7 +10,7 @@
 ## Angular ##
 # compiled output
 dist/
-tmp/
+tmp/ 
 app/**/*.js
 app/**/*.js.map
 

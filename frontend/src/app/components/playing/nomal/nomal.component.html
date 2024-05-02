@@ -1,0 +1,20 @@
+<div class="nomal-main" *ngIf="showCountdown; else otherContent">
+  <div class="countdown">{{ countdownMessage }}</div>
+</div>
+
+<ng-template #otherContent>
+  <div class="nomal-main">
+    <div class="statement">
+      {{ playingDataService.getPlayingQuestion().statement }}
+    </div>
+    <div class="line"></div>
+    <div class="hiragana">
+      {{ playingDataService.getPlayingQuestion().hiragana }}
+    </div>
+    <div class="english">
+      <!-- TODO ひらがなから変換 -->
+      NETTOWA-KUJOUDEHUSEINAAKUSESUWOBOUSISURUTAMENOSEKYURITHISOUTIWO
+      [FAIAUXO-RU]TOIU.
+    </div>
+  </div>
+</ng-template>

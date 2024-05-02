@@ -1,0 +1,12 @@
+<div class="play-base">
+  <span class="title">{{ playingDataService.getSelectedExam()?.examName }}</span>
+  <div class="subtitle">
+    {{ playingDataService.getSelectedCategory()?.categoryName }}
+    【
+      {{ playingDataService.getSelectedSection()?.sectionName}}
+    】
+  </div>
+  <div class="start-base">
+    <router-outlet></router-outlet>
+  </div>
+</div>
