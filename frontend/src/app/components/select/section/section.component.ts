@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { QuestionDataService } from '../../../service/question-data.service';
+import { QuestionDataService } from '../../../services/question-data.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({

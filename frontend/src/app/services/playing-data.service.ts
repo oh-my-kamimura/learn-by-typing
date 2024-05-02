@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { QuestionDataService } from '../service/question-data.service';
+import { QuestionDataService } from '../services/question-data.service';
 import { Exam } from '../models/exam.model';
 import { Category } from '../models/category.model';
 import { Section } from '../models/section.model';

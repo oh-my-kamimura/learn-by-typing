@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { PlayingDataService } from '../../../service/playing-data.service';
+import { PlayingDataService } from '../../../services/playing-data.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

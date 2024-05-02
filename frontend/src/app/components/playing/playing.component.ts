@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
-import { QuestionDataService } from '../../service/question-data.service';
-import { PlayingDataService } from '../../service/playing-data.service';
+import { QuestionDataService } from '../../services/question-data.service';
+import { PlayingDataService } from '../../services/playing-data.service';
 
 @Component({
   selector: 'lbt-playing',
