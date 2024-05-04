@@ -1,18 +1,17 @@
 // src/app/record/record.component.ts
 import { Component, Input, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { WordRecord } from '../../../../models/record.model';
+import { PlayingDataService } from '../../../../services/playing-data.service';
 
 @Component({
   selector: 'lbt-record',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, RouterLink],
   templateUrl: './record.component.html',
-  styleUrls: ['./record.component.scss']
+  styleUrls: ['./record.component.scss', '/src/styles.scss']
 })
-
-
 
 export class RecordComponent {
   @Input() wordRecords: WordRecord[] = [];
@@ -21,6 +20,8 @@ export class RecordComponent {
   totalLatency: number = 0;
   avgLatency: number = 0;
   overallAccuracy: number = 0;
+
+  constructor(public playingDataService: PlayingDataService) {}
 
   ngOnInit() {
     this.getResult();

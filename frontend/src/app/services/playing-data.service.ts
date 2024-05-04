@@ -15,7 +15,6 @@ export class PlayingDataService {
   private selectedSectionId: number = 0;
 
   private playingQuestionList: Array<Question> = [];
-  private playingQuestionNum: number = Math.floor(Math.random() * 3);
 
   constructor(private questionDataService: QuestionDataService) {
     this.loadGameInfo();
@@ -63,7 +62,7 @@ export class PlayingDataService {
   }
 
   fetchPlayingQuestionList() {
-    this.questionDataService.fetchPlayingQuestionList(this.selectedSectionId, 3).subscribe(questions => {
+    this.questionDataService.fetchPlayingQuestionList(this.selectedSectionId, 1).subscribe(questions => {
       this.playingQuestionList = questions;
     });
   }

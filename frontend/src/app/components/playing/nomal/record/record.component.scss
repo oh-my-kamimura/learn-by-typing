@@ -1,0 +1,107 @@
+.record-box {
+  width: 240px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 20px;
+  .record-row {
+    width: 100%;
+    height: 38px;
+    margin: 14px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(102,102,102,0.5);
+    .key {
+      color: rgba(119,119,119,1);
+      font-size: 18px;
+      padding-left: 5px;
+      vertical-align: bottom;
+      line-height: 38px;
+    }
+    .value {
+      color: rgba(230,80,30,1);
+      font-size: 23px;
+      padding-right: 5px;
+      vertical-align: bottom;
+      line-height: 38px;
+    }
+  }
+}
+.words-box {
+  width: 370px;
+  height: 350px;
+  background: rgba(252,252,252,1);
+  border: 1px solid rgba(85,85,85,1);
+  border-radius: 18px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px 0 0 30px;
+  padding: 20px 0;
+  overflow-y: auto;
+  .statement {
+    width: 90%;
+    margin: 10px auto;
+    color: rgba(230,80,30,1);
+    font-size: 14px;
+    text-align: left;
+  }
+  .roman {
+    width: 90%;
+    padding-bottom: 15px;
+    margin: 0 auto 15px;
+    color: rgba(102,102,102,1);
+    font-weight: Regular;
+    font-size: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(102,102,102,0.5);
+  }
+}
+
+$accent-color: rgba(230,80,30,1);
+.next-menu {
+  width: 600px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  .button{
+    width: 230px;
+    height: 50px;
+    opacity: 1;
+    margin: auto;
+    transition: .3s cubic-bezier(0.5, 1, 0.89, 1);
+    &:hover {
+      transform: scale(1.1);
+      .rectangle{
+        background: #FFFFFF;
+        border: 2.5px solid $accent-color;
+      }
+      .text{
+        color: $accent-color;
+      }
+    }
+    .rectangle {
+      width: 100%;
+      height: 65px;
+      background: $accent-color;
+      opacity: 1;
+      position: relative;
+      top: 0px;
+      border-radius: 60px;
+      transition: .3s cubic-bezier(0.5, 1, 0.89, 1);
+    }
+    .text {
+      width: 100%;
+      height: 65px;
+      color: rgba(255,255,255,1);
+      line-height: 65px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-weight: Medium;
+      font-size: 17px;
+      opacity: 1;
+      text-align: center;
+      transition: .3s cubic-bezier(0.5, 1, 0.89, 1);
+    }
+  }
+}

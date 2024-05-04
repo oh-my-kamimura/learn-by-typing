@@ -1,33 +1,70 @@
-<div>
-  <h1>Finished!</h1>
-  <div style="display: flex;">
-    <table style="border: 0">
-      <tr>
-        <td>inputs</td>
-        <td>{{ totalSucceededKeys }}</td>
-      </tr>
-      <tr>
-        <td>miss</td>
-        <td>{{ totalMissedKeys }}</td>
-      </tr>
-      <tr>
-        <td>avg latency</td>
-        <td>{{ avgLatency }}ms</td>
-      </tr>
-      <tr>
-        <td>accuracy</td>
-        <td>
-          {{ overallAccuracy }} %
-        </td>
-      </tr>
-    </table>
+<div class="record-box">
+  <div class="record-row">
+    <div class="key">スコア</div>
+    <div class="value">324</div>
   </div>
-  <ul>
-    <li *ngFor="let r of getRecords(); let i = index">
-      {{ r.word }} latency:{{ r.latency }}ms kpm:{{ r.kpm }} rkpm:{{
-        r.rkpm
-      }}
-      acc:{{ r.accuracy * 100 | number : "1.2-2" }}%
-    </li>
-  </ul>
+  <div class="record-row">
+    <span class="key">ランク</span>
+    <span class="value">S+</span>
+  </div>
+  <div class="record-row">
+    <span class="key">入力時間</span>
+    <span class="value">1分24秒</span>
+  </div>
+  <div class="record-row">
+    <span class="key">入力文字数</span>
+    <span class="value">369</span>
+  </div>
+  <div class="record-row">
+    <span class="key">ミスタイプ数</span>
+    <span class="value">17</span>
+  </div>
+  <div class="record-row">
+    <span class="key">WPM</span>
+    <span class="value">345.8</span>
+  </div>
+  <div class="record-row">
+    <span class="key">正確率</span>
+    <span class="value">92.8%</span>
+  </div>
+</div>
+
+<div class="words-box">
+  <div class="statement">
+    ネットワーク上で不正なアクセスを防止するためのセキュリティ装置を「ファイアウォール」という。
+  </div>
+  <div class="roman">
+    NETTOWAKUJOUDEHUSEINAAKUSESUWOBOUSISURUTAMENOSEKYURITHISOUTIWO[FAIAUXO-RU]TOIU.
+  </div>
+  <div class="statement">
+    クラウドコンピューティングとは、インターネット上にある膨大なコンピュータ資源やサービスを利用し、必要な時に必要なだけ利用することができる、柔軟性の高いコンピューティングモデルです。
+  </div>
+  <div class="roman">NETTOWAKUJOUDEHUSEINAAKUSESUWOBOUSISURUTAMENOSEKYU</div>
+  <div class="statement">
+    ネットワーク上で不正なアクセスを防止するためのセキュリティ装置を「ファイアウォール」という。
+  </div>
+  <div class="roman">
+    NETTOWAKUJOUDEHUSEINAAKUSESUWOBOUSISURUTAMENOSEKYURITHISOUTIWO[FAIAUXO-RU]TOIU.
+  </div>
+</div>
+
+<div class="next-menu">
+  <div class="button">
+    <div class="rectangle">
+      <a routerLink="/playing/start" class="text"> もう一度 </a>
+    </div>
+  </div>
+  <div class="button">
+    <div class="rectangle">
+      <a
+        routerLink="/select/section"
+        [queryParams]="{
+          'exam-id': playingDataService.getSelectedExam()?.examId
+        }"
+        class="text"
+      >
+        問題選択へ
+      </a>
+    </div>
+  </div>
 </div>
