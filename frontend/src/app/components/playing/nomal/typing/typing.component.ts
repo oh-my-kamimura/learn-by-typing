@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { PlayingDataService } from '../../../../services/playing-data.service';
 import * as emiel from 'emiel';
+import { MixedText, MixedTextAutomaton } from '../../mixed-guide';
 
 @Component({
   selector: 'lbt-typing',
@@ -14,7 +15,11 @@ import * as emiel from 'emiel';
 })
 export class TypingComponent implements OnInit {
   @Input() layout: emiel.KeyboardLayout | undefined;
-  @Output() onWordFinished = new EventEmitter<{ automaton: emiel.Automaton, displayedAt: Date, missCount: number }>();
+  @Output() onWordFinished = new EventEmitter<{
+    automaton: emiel.Automaton;
+    displayedAt: Date;
+    missCount: number;
+  }>();
   @Output() onFinished = new EventEmitter<void>();
 
   automatons: any[] = [];
@@ -23,14 +28,17 @@ export class TypingComponent implements OnInit {
   subscription = new Subscription();
   wordDisplayedAt = new Date();
   missCount = 0;
-  words: string[] = [];
+  words: MixedText[] = [];
 
   constructor(public playingDataService: PlayingDataService) {}
 
   ngOnInit() {
-    emiel.keyboard.detect(window).then(layout => {
-      this.automatons = this.buildAutomatons(layout);
-    }).catch(console.error);
+    emiel.keyboard
+      .detect(window)
+      .then((layout) => {
+        this.automatons = this.buildAutomatons(layout);
+      })
+      .catch(console.error);
 
     this.subscription.add(
       emiel.activate(window, (e) => {
@@ -44,21 +52,34 @@ export class TypingComponent implements OnInit {
   }
 
   buildAutomatons(layout: emiel.KeyboardLayout): any[] {
-    this.words = this.playingDataService.getPlayingQuestionList().map(question => question.hiragana.replace(/「|」/g, ''));
-    return this.words.map(word => emiel.rule.getRoman(layout).build(word));
+    this.words = this.playingDataService
+      .getPlayingQuestionList()
+      .map(
+        (question) =>
+          new MixedText(
+            question.hiragana.replace(/「|」/g, ''),
+            question.statement.replace(/「|」/g, '').split('').join(',')
+          )
+      );
+    console.log(this.words);
+    return this.words.map(word => new MixedTextAutomaton(
+      emiel.rule.getRoman(layout).build(word.kanaText),
+      word,
+      )
+    )
   }
 
   processInput(e: any) {
     this.lastInputKey = e.input;
-    const result = this.automatons[this.wordIndex].input(e);
+    const result = this.automatons[this.wordIndex].base.input(e);
     if (result.isFailed) {
       this.missCount++;
     }
     if (result.isFinished) {
       this.onWordFinished.emit({
-        automaton: this.automatons[this.wordIndex],
+        automaton: this.automatons[this.wordIndex].base,
         displayedAt: this.wordDisplayedAt,
-        missCount: this.missCount
+        missCount: this.missCount,
       });
       if (this.wordIndex === this.words.length - 1) {
         this.onFinished.emit();

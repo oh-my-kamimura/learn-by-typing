@@ -1,25 +1,24 @@
 <div class="statement">
   <span class="finished">
-    <!-- {{ automatons[wordIndex].finishedWord }} -->
+    {{ automatons[wordIndex]?.finishedMixedSubstr }}
   </span>
-  {{ playingDataService.getPlayingQuestionList()[wordIndex].statement }}
-  <!-- {{ automatons[wordIndex].pendingWord }} -->
+  {{ automatons[wordIndex]?.pendingMixedSubstr }}
 </div>
 
 <div class="line"></div>
 
 <div class="hiragana">
   <span class="finished">
-    {{ automatons[wordIndex].finishedWord }}
+    {{ automatons[wordIndex]?.base.finishedWord }}
   </span>
-  {{ automatons[wordIndex].pendingWord }}
+  {{ automatons[wordIndex]?.base.pendingWord }}
 </div>
 
 <div class="english">
   <span class="finished">
-    {{ automatons[wordIndex].finishedRoman }}
+    {{ automatons[wordIndex]?.base.finishedRoman }}
   </span>
-  {{ automatons[wordIndex].pendingRoman }}
+  {{ automatons[wordIndex]?.base.pendingRoman }}
 </div>
 
 <div class="lastInputKey">
