@@ -16,7 +16,7 @@ import { MixedText, MixedTextAutomaton } from '../../mixed-guide';
 export class TypingComponent implements OnInit {
   @Input() layout: emiel.KeyboardLayout | undefined;
   @Output() onWordFinished = new EventEmitter<{
-    automaton: emiel.Automaton;
+    automaton: MixedTextAutomaton;
     displayedAt: Date;
     missCount: number;
   }>();
@@ -75,9 +75,10 @@ export class TypingComponent implements OnInit {
     if (result.isFailed) {
       this.missCount++;
     }
+    // console.log("this.automatons[this.wordIndex]: ", this.automatons[this.wordIndex]);
     if (result.isFinished) {
       this.onWordFinished.emit({
-        automaton: this.automatons[this.wordIndex].base,
+        automaton: this.automatons[this.wordIndex],
         displayedAt: this.wordDisplayedAt,
         missCount: this.missCount,
       });

@@ -4,4 +4,5 @@ export interface WordRecord {
   firstInputtedAt: Date;
   finishedAt: Date;
   missCount: number;
+  mixedText: string;
 }

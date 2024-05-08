@@ -29,6 +29,9 @@ a {
     height: 160px;
     position: relative;
     margin: 0 10px;
+    &.unable {
+      opacity: 0.4;
+    }
     .button {
       width: 280px;
       height: 52px;

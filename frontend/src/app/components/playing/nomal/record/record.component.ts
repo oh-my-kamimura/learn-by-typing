@@ -15,11 +15,13 @@ import { PlayingDataService } from '../../../../services/playing-data.service';
 
 export class RecordComponent {
   @Input() wordRecords: WordRecord[] = [];
+  score: number = 0;
+  totalInputSeconds: number = 0;
   totalSucceededKeys: number = 0;
   totalMissedKeys: number = 0;
-  totalLatency: number = 0;
-  avgLatency: number = 0;
+  wpm: number = 0;
   overallAccuracy: number = 0;
+
 
   constructor(public playingDataService: PlayingDataService) {}
 
@@ -29,30 +31,28 @@ export class RecordComponent {
 
   getRecords() {
     return this.wordRecords.map(record => {
-      const latency = record.firstInputtedAt.getTime() - record.displayedAt.getTime();
-      const rkpm = Math.trunc(((record.automaton.succeededInputs.length - 1) / (record.finishedAt.getTime() - record.firstInputtedAt.getTime())) * 1000 * 60);
-      const kpm = Math.trunc((record.automaton.succeededInputs.length / (record.finishedAt.getTime() - record.displayedAt.getTime())) * 1000 * 60);
+      const inputSeconds = (record.finishedAt.getTime() - record.displayedAt.getTime()) / 1000;
+      const wpm = (record.automaton.succeededInputs.length / inputSeconds) * 60;
       const accuracy = record.automaton.succeededInputs.length / (record.missCount + record.automaton.succeededInputs.length);
       return {
-        latency,
-        kpm,
-        rkpm,
-        record,
+        word: record.automaton.word,
+        inputSeconds,
+        wpm,
         accuracy,
-        word: record.automaton.word
+        mixedText: record.mixedText
       };
     });
   }
 
   getResult() {
     for (const record of this.wordRecords) {
-      const latency = record.firstInputtedAt.getTime() - record.displayedAt.getTime();
       this.totalSucceededKeys += record.automaton.succeededInputs.length;
       this.totalMissedKeys += record.missCount;
-      this.totalLatency += latency;
+      let inputSeconds = (record.finishedAt.getTime() - record.displayedAt.getTime()) / 1000;
+      this.totalInputSeconds += inputSeconds;
     }
-    this.avgLatency = Math.trunc(this.totalLatency / this.wordRecords.length);
-    this.overallAccuracy = (this.totalSucceededKeys / (this.totalSucceededKeys + this.totalMissedKeys)) * 100;
+    this.wpm = ((this.totalSucceededKeys / this.totalInputSeconds) * 60)
+    this.overallAccuracy = (this.totalSucceededKeys / (this.totalSucceededKeys + this.totalMissedKeys));
+    this.score = this.wpm * this.overallAccuracy;
   }
 }
-

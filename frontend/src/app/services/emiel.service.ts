@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as emiel from 'emiel';
 import { WordRecord } from '../models/record.model';
+import { MixedTextAutomaton } from '../components/playing/mixed-guide';
 
 @Injectable({
   providedIn: 'root',
@@ -19,17 +20,24 @@ export class EmielService {
     });
   }
 
-  finishWord(a: emiel.Automaton, displayedAt: Date, missCount: number): void {
+  finishWord(a: MixedTextAutomaton, displayedAt: Date, missCount: number): void {
+    console.log("a:", a);
     this.wordRecords.push({
-      automaton: a,
+      automaton: a.base,
       displayedAt: displayedAt,
-      firstInputtedAt: a.succeededInputs[0].event.timestamp,
-      finishedAt: a.succeededInputs[a.succeededInputs.length - 1].event.timestamp,
+      firstInputtedAt: a.base.succeededInputs[0].event.timestamp,
+      finishedAt: a.base.succeededInputs[a.base.succeededInputs.length - 1].event.timestamp,
       missCount: missCount,
+      mixedText: a.metadata.mixedText
     });
   }
 
   finishTyping(): void {
     this.isFinished = true;
+  }
+
+  startTyping(): void {
+    this.isFinished = false;
+    this.wordRecords = [];
   }
 }
