@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { QuestionDataService } from '../../services/question-data.service';
 import { PlayingDataService } from '../../services/playing-data.service';
+import { BreadcrumbsComponent } from '../shared/breadcrumbs/breadcrumbs.component';
 
 @Component({
   selector: 'lbt-playing',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, BreadcrumbsComponent],
   templateUrl: './playing.component.html',
   styleUrls: ['./playing.component.scss', '/src/styles.scss'],
   providers: [QuestionDataService, PlayingDataService]

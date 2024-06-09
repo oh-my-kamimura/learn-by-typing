@@ -1,0 +1,19 @@
+.breadcrumbs {
+  width: 336px;
+  color: rgba(105, 136, 157, 1);
+  position: absolute;
+  top: 73px;
+  left: 33px;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: left;
+  display: block;
+  padding: 16px 16px 16px 40px;
+  background-position: left 16px center;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-image: url(https://img.icons8.com/?size=100&id=59809&format=png&color=576C88);
+  .separator {
+    font-size: 12px;
+  }
+}

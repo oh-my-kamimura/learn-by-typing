@@ -5,11 +5,12 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { QuestionDataService } from '../../../services/question-data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { BreadcrumbsComponent } from '../../shared/breadcrumbs/breadcrumbs.component';
 
 @Component({
   selector: 'lbt-section',
   standalone: true,
-  imports: [CommonModule, RouterModule, RouterLink, HttpClientModule],
+  imports: [CommonModule, RouterModule, RouterLink, HttpClientModule, BreadcrumbsComponent],
   templateUrl: './section.component.html',
   styleUrls: ['./section.component.scss', '/src/styles.scss'],
   providers: [QuestionDataService]

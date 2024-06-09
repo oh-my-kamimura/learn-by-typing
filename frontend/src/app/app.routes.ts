@@ -4,11 +4,14 @@ import { LogInComponent } from './components/auth/log-in/log-in.component';
 import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { ExamComponent } from './components/select/exam/exam.component';
 import { SectionComponent } from './components/select/section/section.component';
-import { PlayingComponent } from './components/playing/playing.component';
-import { StartComponent } from './components/playing/start/start.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
+  {
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full',
+    data: { breadcrumb: 'ホーム'},
+  },
   {
     path: 'auth',
     children: [
@@ -18,13 +21,25 @@ export const routes: Routes = [
   },
   {
     path: 'select',
+    data: { breadcrumb: { skip: true } },
     children: [
-      { path: 'exam', component: ExamComponent },
-      { path: 'section', component: SectionComponent },
-    ]
+      {
+        path: 'exam',
+        component: ExamComponent,
+        data: { breadcrumb: '資格選択'},
+      },
+      {
+        path: 'section',
+        component: SectionComponent,
+        data: { breadcrumb: 'セクション選択' },
+      },
+    ],
   },
   {
     path: 'playing',
-    loadChildren: () => import('./components/playing/playing.routes').then(m => m.playingRoutes),
+    loadChildren: () =>
+      import('./components/playing/playing.routes').then(
+        (m) => m.playingRoutes
+      ),
   },
 ];
