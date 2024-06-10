@@ -16,6 +16,5 @@ export class BreadcrumbsComponent {
   ) { }
 
   ngOnInit(): void {
-    this.breadcrumbService.set('@ChildOne', 'Child One1111');
   }
 }

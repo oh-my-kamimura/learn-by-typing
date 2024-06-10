@@ -10,36 +10,44 @@ export const routes: Routes = [
     path: '',
     component: HomeComponent,
     pathMatch: 'full',
-    data: { breadcrumb: 'ホーム'},
+    data: { breadcrumb: 'ホーム'}
   },
   {
     path: 'auth',
+    data: { breadcrumb: {skip: true}},
     children: [
-      { path: 'log-in', component: LogInComponent },
-      { path: 'sign-up', component: SignUpComponent },
+      {
+        path: 'log-in',
+        component: LogInComponent,
+        data: { breadcrumb: 'ログイン'}
+      },
+      {
+        path: 'sign-up',
+        component: SignUpComponent,
+        data: { breadcrumb: '会員登録'}
+      },
     ]
   },
   {
-    path: 'select',
-    data: { breadcrumb: { skip: true } },
+    path: 'exam',
+    data: { breadcrumb: '資格選択'},
     children: [
-      {
-        path: 'exam',
-        component: ExamComponent,
-        data: { breadcrumb: '資格選択'},
-      },
+      { path: '', component: ExamComponent},
       {
         path: 'section',
-        component: SectionComponent,
         data: { breadcrumb: 'セクション選択' },
+        children: [
+          { path: '', component: SectionComponent},
+          {
+            path: 'playing',
+            data: { breadcrumb: 'プレイ画面'},
+            loadChildren: () =>
+              import('./components/playing/playing.routes').then(
+                (m) => m.playingRoutes
+              ),
+          },
+        ]
       },
-    ],
-  },
-  {
-    path: 'playing',
-    loadChildren: () =>
-      import('./components/playing/playing.routes').then(
-        (m) => m.playingRoutes
-      ),
+    ]
   },
 ];

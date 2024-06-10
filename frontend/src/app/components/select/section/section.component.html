@@ -1,5 +1,5 @@
+<lbt-breadcrumbs></lbt-breadcrumbs>
 <div class="play-base">
-  <lbt-breadcrumbs></lbt-breadcrumbs>
   <span class="title">{{ questionDataService.getExam(examId)?.examName }}</span>
   <div class="score-base">
     <!-- TODO ngx-bootstrapライブラリに変更 -->
@@ -33,7 +33,7 @@
       <a
         *ngFor="let section of category.sectionList"
         class="rectangle category"
-        routerLink="/playing/start"
+        routerLink="/exam/section/playing/start"
         [queryParams]="{
           'exam-id': examId,
           'category-id': category.categoryId,
