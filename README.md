@@ -33,7 +33,7 @@ http://learn-by-typing.com
 
 ## 機能一覧
 
-| トップ画面 |　ログイン画面 |
+| トップ画面 |　資格選択画面 |
 | ---- | ---- |
 | ![トップ画面](/docs/img/function-list/top.png) | ![資格選択画面](/docs/img/function-list/select-exam.png) |
 | サービスの概要とお問い合わせ方法を掲載しています。 | 学習したい資格を選択する画面です。 |
