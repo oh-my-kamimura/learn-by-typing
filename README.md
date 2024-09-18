@@ -1,27 +1,82 @@
-# LearnByTypingApp
+# 資格勉強×タイピング
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+![ヘッダー画像](/docs/img/header/header.png)
 
-## Development server
+<br />
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## サービスのURL
 
-## Code scaffolding
+http://learn-by-typing.com
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<br />
 
-## Build
+## 概要
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+タイピングゲームを楽しみながら、資格試験の勉強を行うことができるWebアプリケーションです。
 
-## Running unit tests
+<br />
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## サービスへの想い
 
-## Running end-to-end tests
+タイピングゲームに夢中になって、気づいたら時間が過ぎていたという経験をお持ちの方も多いのではないでしょうか。また、タイピングした文章が自然と記憶に残っていることもあるのではないでしょうか。  
+このプロダクトは、私自身のこうした経験をもとに「タイピングゲームと資格勉強を組み合わせたら、もっと有意義な学習体験が提供できるのでは？」という考えから開発しました。  
+まだ開発途中ではありますが、学生時代から自分自身が欲しいと思っていたサービスを形にしたWebアプリケーションです。
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+<br />
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## アプリケーションのイメージ
+
+![画面イメージ](/docs/img/image-mov/screen-image.gif)
+
+<br />
+
+## 機能一覧
+
+| トップ画面 |　資格選択画面 |
+| ---- | ---- |
+| ![トップ画面](/docs/img/function-list/top.png) | ![資格選択画面](/docs/img/function-list/select-exam.png) |
+| サービスの概要とお問い合わせ方法を掲載しています。 | 学習したい資格を選択する画面です。 |
+
+| タイピング画面 |　結果画面 |
+| ---- | ---- |
+| ![タイピング画面](/docs/img//function-list/typing.png) | ![結果画面](/docs/img/function-list/result.png) |
+| 実際にタイピングを行う画面です。 | タイピング結果（速度、正確性など）を表示しています。 |
+
+<br />
+
+## 使用技術
+
+- **フロントエンド** 
+  - angular 17.3.10
+  - TypeScript
+  - HTML
+  - CSS
+- **バックエンド** 
+  - Spring Boot
+  - Java17
+- **データベース** 
+  - MySQL
+- **ビルドツール** 
+  - Node.js
+- **インフラ** 
+  - AWS（EC2, RDS, S3）
+- **その他** 
+  - Figma 
+
+<br />
+
+## 今後の展望
+
+さらなる学習体験の向上を目指し、以下の機能追加を予定しています。
+
+- **新しいタイピング機能**
+  - 問題形式、穴埋め形式など学習効率を高めるタイピング機能を追加予定です。
+- **ログイン機能**
+  - ログイン機能を追加し、ユーザーの学習履歴を保存することでモチベーションの向上を図ります。
+
+<br />  
+
+## 使用したnpmライブラリ
+
+https://www.npmjs.com/package/xng-breadcrumb?activeTab=readme
