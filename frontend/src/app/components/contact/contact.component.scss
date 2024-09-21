@@ -25,7 +25,7 @@
   left: 0;
   right: 0;
   margin: auto;
-  overflow: hidden;
+  overflow: visible;
   .title {
     width: 100%;
     color: $base-color;
@@ -52,6 +52,7 @@
     text-align: center;
   }
   form > input, textarea {
+    resize: none;
     width: 470px;
     background: rgba(255,255,255,1);
     opacity: 1;
@@ -59,7 +60,7 @@
     left: 0;
     right: 0;
     margin: auto;
-    padding: 13px;
+    padding: 14px;
     color: rgba(80,80,80,1);
     font-size: 16px;
     border: 1px solid rgba(0,0,0,1);
@@ -67,15 +68,15 @@
     overflow: hidden;
     vertical-align: top;
     &.n1{
-      height: 28px;
+      height: 29px;
       top: 130px;
     }
     &.n2{
-      height: 28px;
+      height: 29px;
       top: 202px;
     }
     &,textarea {
-      height: 229px;
+      height: 230px;
       top: 274px;
     }
     &.invalid {
@@ -88,9 +89,23 @@
     background-color: #ffc;
     outline: none;
   }
+  .n1-warning{
+    position: absolute;
+    top: 171px;
+    left: 110px;
+    color: $warning-color;
+    font-size: 10px;
+  }
   .n2-warning{
     position: absolute;
-    top: 258px;
+    top: 242px;
+    left: 110px;
+    color: $warning-color;
+    font-size: 10px;
+  }
+  .text-warning{
+    position: absolute;
+    top: 508px;
     left: 110px;
     color: $warning-color;
     font-size: 10px;
@@ -103,7 +118,7 @@
     width: 500px;
     height: 54px;
     position: absolute;
-    top: 564px;
+    top: 554px;
     left: 0;
     right: 0;
     margin: auto;
@@ -135,7 +150,7 @@
   .error-message {
     color: $warning-color;
     position: absolute;
-    top: 625px;
+    top: 615px;
     left: 100px;
     font-size: 14px;
   }

@@ -41,7 +41,7 @@ export const routes: Routes = [
           { path: '', component: SectionComponent},
           {
             path: 'playing',
-            data: { breadcrumb: 'プレイ画面'},
+            data: { breadcrumb: 'プレイ'},
             loadChildren: () =>
               import('./components/playing/playing.routes').then(
                 (m) => m.playingRoutes

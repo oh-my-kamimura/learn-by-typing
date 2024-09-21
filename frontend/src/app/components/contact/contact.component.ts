@@ -19,9 +19,9 @@ export class ContactComponent {
 
   constructor(private fb: FormBuilder, private inquiryService: InquiryService) {
     this.inquiryForm = this.fb.group({
-      subject: [''],
-      email  : ['', [Validators.email]],
-      message: ['', [Validators.required]]
+      subject: ['', [Validators.maxLength(128)]],
+      email  : ['', [Validators.email, Validators.maxLength(128)]],
+      message: ['', [Validators.required, Validators.maxLength(512)]]
     });
   }
 

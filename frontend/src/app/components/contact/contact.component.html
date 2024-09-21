@@ -4,10 +4,19 @@
   <form [formGroup]="inquiryForm" (ngSubmit)="sendInquiry()" *ngIf="!isSent">
     <input
       class="n1"
+      [ngClass]="{
+        invalid: inquiryForm.get('subject')?.invalid && inquiryForm.get('subject')?.touched
+      }"
       type="text"
       formControlName="subject"
       placeholder="件名（任意）"
     />
+    <div
+      *ngIf="inquiryForm.get('subject')?.invalid && inquiryForm.get('subject')?.touched"
+      class="n1-warning"
+    >
+      128文字以内で入力してください。
+    </div>
     <input
       class="n2"
       [ngClass]="{
@@ -24,10 +33,19 @@
       正しいメールアドレスを入力してください。
     </div>
     <textarea
+      [ngClass]="{
+        invalid: inquiryForm.get('message')?.invalid && inquiryForm.get('message')?.touched
+      }"
       type="text"
       formControlName="message"
       placeholder="本文"
     ></textarea>
+    <div
+      *ngIf="inquiryForm.get('message')?.invalid && inquiryForm.get('message')?.touched"
+      class="text-warning"
+    >
+      本文は必須です。（512文字以内）
+    </div>
 
     <button
       class="send-button"
@@ -42,8 +60,8 @@
   </form>
 
   <div *ngIf="isError" class="error-message">
-    通信エラーが発生しました。<br />
-    時間をおいてから再度お試しください。
+    通信エラーが発生しました。時間をおいてから再度お試しください。<br>
+    接続できない場合は yohei.kamimura.7y&#64;gmail.com までご連絡ください。
   </div>
 
   <div *ngIf="isSent" class="send-complete">
