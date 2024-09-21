@@ -1,4 +1,4 @@
-@import "../../../../styles.scss";
+@import "../../../styles.scss";
 
 .contact-us {
   .send-button:not(.invalid):hover {
@@ -9,12 +9,19 @@
   }
 }
 
+:host.home-contact{
+  .contact-us{
+    position: absolute;
+    top: 3488px;
+  }
+}
+
 .contact-us {
   width: 700px;
-  height: 700px;
+  height: 100vh;
   opacity: 1;
-  position: absolute;
-  top: 3488px;
+  position: relative;
+  top: 100px;
   left: 0;
   right: 0;
   margin: auto;

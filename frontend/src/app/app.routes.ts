@@ -4,6 +4,7 @@ import { LogInComponent } from './components/auth/log-in/log-in.component';
 import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { ExamComponent } from './components/select/exam/exam.component';
 import { SectionComponent } from './components/select/section/section.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 export const routes: Routes = [
   {
@@ -50,4 +51,9 @@ export const routes: Routes = [
       },
     ]
   },
+  {
+    path: 'contact',
+    component: ContactComponent,
+    data: { breadcrumb: {skip: true}},
+  }
 ];
