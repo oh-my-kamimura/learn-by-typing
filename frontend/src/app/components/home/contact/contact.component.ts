@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MessageService } from '../../../services/message.service';
+import { InquiryService } from '../../../services/inquiry.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -15,7 +15,7 @@ export class ContactComponent {
 
   protected inquiryForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private messageService: MessageService) {
+  constructor(private fb: FormBuilder, private inquiryService: InquiryService) {
     this.inquiryForm = this.fb.group({
       subject: [''],
       email  : ['', [Validators.email]],
@@ -23,7 +23,7 @@ export class ContactComponent {
     });
   }
 
-  sendMessage() {
+  sendInquiry() {
     if (this.inquiryForm.valid) {
       // TODO: ここでAPIを送信
       // this.messageService.sendMessage(this.inquiryForm.value)

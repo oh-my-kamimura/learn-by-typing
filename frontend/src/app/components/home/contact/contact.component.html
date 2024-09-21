@@ -1,7 +1,7 @@
 <div class="contact-us">
   <span class="title">お問合せ / ご要望</span
   ><span class="subtitle">- Contact us -</span>
-  <form [formGroup]="inquiryForm" (ngSubmit)="sendMessage()">
+  <form [formGroup]="inquiryForm" (ngSubmit)="sendInquiry()">
     <input class="n1" type="text" formControlName="subject" placeholder="件名（任意）" />
     <input class="n2" type="mail" formControlName="email" placeholder="メールアドレス（任意）" />
     <textarea
