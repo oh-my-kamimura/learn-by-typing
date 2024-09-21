@@ -17,7 +17,7 @@ import lombok.ToString;
 public class Section {
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
-  private Integer sectionId;
+  private Long sectionId;
 
   @Column
   private String sectionName;
@@ -26,7 +26,7 @@ public class Section {
   private Boolean isEnable;
 
   @Column
-  private int categoryId;
+  private Long categoryId;
 
   @ManyToOne(fetch=FetchType.EAGER)
   @JsonBackReference

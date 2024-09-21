@@ -9,7 +9,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -21,7 +20,7 @@ import java.util.List;
 public class Category {
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
-  private Integer categoryId;
+  private Long categoryId;
 
   @Column
   private String categoryName;
@@ -33,7 +32,7 @@ public class Category {
   private Exam exam;
 
   @Column
-  private int examId;
+  private Long examId;
 
   @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "category")
   @JsonManagedReference

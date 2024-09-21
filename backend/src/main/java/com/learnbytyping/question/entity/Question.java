@@ -16,10 +16,10 @@ public class Question {
 
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
-  private int questionId;
+  private Long questionId;
 
   @Column
-  private int sectionId;
+  private Long sectionId;
 
   @Column
   private String statement;

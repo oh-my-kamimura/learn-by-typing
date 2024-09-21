@@ -8,7 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -21,7 +20,7 @@ public class Exam {
 
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
-  private int examId;
+  private Long examId;
 
   @Column
   private String examName;
