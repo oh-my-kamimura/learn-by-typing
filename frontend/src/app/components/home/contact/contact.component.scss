@@ -1,7 +1,7 @@
 @import "../../../../styles.scss";
 
 .contact-us {
-  .send-button:hover {
+  .send-button:not(.invalid):hover {
     transform: scale(1.05);
   }
   .send-button{
@@ -52,7 +52,7 @@
     left: 0;
     right: 0;
     margin: auto;
-    padding: 15px;
+    padding: 13px;
     color: rgba(80,80,80,1);
     font-size: 16px;
     border: 1px solid rgba(0,0,0,1);
@@ -60,16 +60,20 @@
     overflow: hidden;
     vertical-align: top;
     &.n1{
-      height: 29px;
+      height: 28px;
       top: 130px;
     }
     &.n2{
-      height: 29px;
+      height: 28px;
       top: 202px;
     }
     &,textarea {
       height: 229px;
       top: 274px;
+    }
+    &.invalid {
+      border: 1.5px rgba(200, 0, 0, 1) solid;
+      background-color: rgba(255, 240, 240, 1);
     }
   }
   form > input:focus, textarea:focus{
@@ -77,34 +81,31 @@
     background-color: #ffc;
     outline: none;
   }
+  .n2-warning{
+    position: absolute;
+    top: 258px;
+    left: 110px;
+    color: rgba(200, 0, 0, 1);
+    font-size: 10px;
+  }
 
 
   .send-button{
     display: block;
     border: none;
-    background: none;
     width: 500px;
     height: 54px;
-    opacity: 1;
     position: absolute;
     top: 564px;
     left: 0;
     right: 0;
     margin: auto;
     overflow: hidden;
-    .rectangle {
-      width: 100%;
-      height: 54px;
-      background: rgba(80,138,199,1);
-      opacity: 1;
-      position: absolute;
-      top: 0;
-      left: 0px;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      overflow: hidden;
+    background: rgba(80,138,199,1);
+    border-radius: 10px;
+    opacity: 1;
+    &.invalid {
+      opacity: 0.4;
     }
     .label {
       width: 451px;
