@@ -1,7 +1,7 @@
 <div class="contact-us">
   <span class="title">お問合せ / ご要望</span
   ><span class="subtitle">- Contact us -</span>
-  <form [formGroup]="inquiryForm" (ngSubmit)="sendInquiry()">
+  <form [formGroup]="inquiryForm" (ngSubmit)="sendInquiry()" *ngIf="!isSent">
     <input
       class="n1"
       type="text"
@@ -29,7 +29,9 @@
       placeholder="本文"
     ></textarea>
 
-    <button class="send-button" type="submit"
+    <button
+      class="send-button"
+      type="submit"
       [disabled]="inquiryForm.invalid"
       [ngClass]="{
         invalid: inquiryForm.invalid
@@ -38,4 +40,14 @@
       <span class="label">送信</span>
     </button>
   </form>
+
+  <div *ngIf="isError" class="error-message">
+    通信エラーが発生しました。<br />
+    時間をおいてから再度お試しください。
+  </div>
+
+  <div *ngIf="isSent" class="send-complete">
+    ご意見ありがとうございます。<br>
+    送信が完了しました。
+  </div>
 </div>

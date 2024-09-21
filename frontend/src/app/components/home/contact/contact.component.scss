@@ -11,7 +11,7 @@
 
 .contact-us {
   width: 700px;
-  height: 650px;
+  height: 700px;
   opacity: 1;
   position: absolute;
   top: 3488px;
@@ -72,7 +72,7 @@
       top: 274px;
     }
     &.invalid {
-      border: 1.5px rgba(200, 0, 0, 1) solid;
+      border: 1.5px $warning-color solid;
       background-color: rgba(255, 240, 240, 1);
     }
   }
@@ -85,7 +85,7 @@
     position: absolute;
     top: 258px;
     left: 110px;
-    color: rgba(200, 0, 0, 1);
+    color: $warning-color;
     font-size: 10px;
   }
 
@@ -123,5 +123,24 @@
       text-align: center;
       vertical-align: center;
     }
+  }
+
+  .error-message {
+    color: $warning-color;
+    position: absolute;
+    top: 625px;
+    left: 100px;
+    font-size: 14px;
+  }
+
+  .send-complete {
+    color: $accent-color;
+    position: absolute;
+    top: 270px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
   }
 }

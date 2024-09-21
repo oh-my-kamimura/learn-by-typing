@@ -14,6 +14,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ContactComponent {
 
   protected inquiryForm: FormGroup;
+  protected isSent: boolean = false;
+  protected isError: boolean = false;
 
   constructor(private fb: FormBuilder, private inquiryService: InquiryService) {
     this.inquiryForm = this.fb.group({
@@ -25,10 +27,16 @@ export class ContactComponent {
 
   sendInquiry() {
     if (this.inquiryForm.valid) {
-      this.inquiryService.sendInquiry(this.inquiryForm.value)
-      console.log(this.inquiryForm.value);
-    } else {
-      console.log('フォームが無効です');
+      this.inquiryService.sendInquiry(this.inquiryForm.value).subscribe({
+        next: (response) => {
+          console.log('問い合わせが送信されました', response);
+          this.isSent = true;
+        },
+        error: (error) => {
+          console.error('送信エラー', error);
+          this.isError = true;
+        }
+      });
     }
   }
 }

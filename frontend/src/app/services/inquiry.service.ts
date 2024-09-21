@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +11,8 @@ export class InquiryService {
 
   private sendInquiryUrl: string = '/app/inquiries';
 
-  sendInquiry(inquiry: any) {
-    return this.http.post(this.sendInquiryUrl, inquiry, { responseType: 'text' }).subscribe({
-      next: (response) => {
-        console.log('問い合わせが送信されました', response);
-      },
-      error: (error) => {
-        console.error('送信エラー', error);
-      }
-    })
+  sendInquiry(inquiry: any): Observable<any> {
+    return this.http.post(this.sendInquiryUrl, inquiry, { responseType: 'text' });
   }
 
 }
