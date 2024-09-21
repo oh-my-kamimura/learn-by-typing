@@ -11,7 +11,6 @@ import { BreadcrumbsComponent } from '../shared/breadcrumbs/breadcrumbs.componen
   imports: [RouterOutlet, BreadcrumbsComponent],
   templateUrl: './playing.component.html',
   styleUrls: ['./playing.component.scss', '/src/styles.scss'],
-  providers: [QuestionDataService, PlayingDataService]
 })
 export class PlayingComponent {
   examId: number = 0;
