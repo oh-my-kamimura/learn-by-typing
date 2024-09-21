@@ -25,8 +25,7 @@ export class ContactComponent {
 
   sendInquiry() {
     if (this.inquiryForm.valid) {
-      // TODO: ここでAPIを送信
-      // this.messageService.sendMessage(this.inquiryForm.value)
+      this.inquiryService.sendInquiry(this.inquiryForm.value)
       console.log(this.inquiryForm.value);
     } else {
       console.log('フォームが無効です');
