@@ -44,7 +44,7 @@
     opacity: 1;
     text-align: center;
   }
-  form > * {
+  form > input, textarea {
     width: 470px;
     background: rgba(255,255,255,1);
     opacity: 1;
@@ -72,7 +72,7 @@
       top: 274px;
     }
   }
-  form > *:focus{
+  form > input:focus, textarea:focus{
     border-color: #000;
     background-color: #ffc;
     outline: none;
@@ -80,6 +80,9 @@
 
 
   .send-button{
+    display: block;
+    border: none;
+    background: none;
     width: 500px;
     height: 54px;
     opacity: 1;
@@ -109,6 +112,7 @@
       line-height: 54px;
       color: rgba(255,255,255,1);
       position: absolute;
+      top: 0;
       left: 0;
       right: 0;
       margin: auto;
