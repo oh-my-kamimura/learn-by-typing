@@ -22,6 +22,9 @@ public class Question {
   private Long sectionId;
 
   @Column
+  private Integer frequency;
+
+  @Column
   private String statement;
 
   @Column
