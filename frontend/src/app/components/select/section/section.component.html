@@ -1,9 +1,10 @@
 <lbt-breadcrumbs></lbt-breadcrumbs>
 <div class="play-base">
   <span class="title">{{ questionDataService.getExam(examId)?.examName }}</span>
-  <div class="exam-description">
-    ｢ｉパス｣はITに関する基礎知識を問う国家試験です。IT化された社会で働くすべての方に必要な基礎的知識を証明できます。
-  </div>
+  <div
+    class="exam-description"
+    [innerHTML]="questionDataService.getExam(examId)?.description"
+  ></div>
   <div class="select-base">
     <div
       *ngFor="let category of questionDataService.getExam(examId)?.categoryList"

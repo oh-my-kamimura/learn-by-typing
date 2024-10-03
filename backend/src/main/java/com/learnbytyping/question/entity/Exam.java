@@ -28,6 +28,9 @@ public class Exam {
   @Column
   private boolean isEnable;
 
+  @Column
+  private String description;
+
   @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "exam")
   @JsonManagedReference
   @ToString.Exclude

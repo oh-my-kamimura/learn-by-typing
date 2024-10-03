@@ -31,6 +31,7 @@ export class QuestionDataService {
         exam.examId = data.examId;
         exam.examName = data.examName;
         exam.isEnable = data.enable;
+        exam.description = data.description;
         exam.categoryList = data.categoryList.map((categoryData: any) => {
           const category = new Category();
           category.categoryId = categoryData.categoryId;
