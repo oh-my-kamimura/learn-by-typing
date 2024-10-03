@@ -77,6 +77,13 @@ http://learn-by-typing.com
 
 <br />  
 
+## おまけ
+
+- **UI設計**
+  - 画面デザインはFigmaで行いました。
+
+![画面遷移図](/docs/img/ui-figma/ui-figma.png)
+
 ## 使用したnpmライブラリ
 
 https://www.npmjs.com/package/xng-breadcrumb?activeTab=readme
