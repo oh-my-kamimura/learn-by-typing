@@ -13,8 +13,7 @@ export class PlayingDataService {
   private selectedExamId: number = 0;
   private selectedCategoryId: number = 0;
   private selectedSectionId: number = 0;
-  private fetchQuestionNum: number = 2;
-  private currentQuestionNum: number = 1;
+  private totalQuestionNum: number = 2;
 
   private playingQuestionList: Array<Question> = [];
 
@@ -63,13 +62,23 @@ export class PlayingDataService {
     return category.getSection(this.selectedSectionId);
   }
 
+  getTotalQuestionNum(): number {
+    return this.totalQuestionNum;
+  }
+
   fetchPlayingQuestionList() {
-    this.questionDataService.fetchPlayingQuestionList(this.selectedSectionId, this.fetchQuestionNum).subscribe(questions => {
-      this.playingQuestionList = questions;
-    });
+    this.questionDataService
+      .fetchPlayingQuestionList(this.selectedSectionId, this.totalQuestionNum)
+      .subscribe((questions) => {
+        this.playingQuestionList = questions;
+      });
   }
 
   getPlayingQuestionList(): Question[] {
     return this.playingQuestionList;
+  }
+
+  getQuestionInfo(questionNum: number): Question {
+    return this.playingQuestionList[questionNum];
   }
 }

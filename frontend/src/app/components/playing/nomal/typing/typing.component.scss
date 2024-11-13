@@ -5,9 +5,7 @@ div {
 .statement {
   width: 100%;
   color: rgba(230,80,30,1);
-  position: relative;
-  top: 30px;
-  left: 0px;
+  margin-top: 30px;
   font-weight: Medium;
   font-size: 20px;
   text-align: left;
@@ -20,16 +18,13 @@ div {
   width: 100%;
   height: 1px;
   border-top: 1px solid rgb(160, 160, 160);
-  position: relative;
-  top: 60px;
+  margin-top: 40px;
 }
 
 .hiragana {
   width: 100%;
   color: rgba(70,70,70,0.8);
-  position: relative;
-  top: 90px;
-  left: 0px;
+  margin-top: 30px;
   font-weight: Regular;
   font-size: 17px;
   text-align: left;
@@ -41,8 +36,7 @@ div {
 .english {
   width: 100%;
   color: rgba(70,70,70,0.8);
-  position: relative;
-  top: 110px;
+  margin-top: 20px;
   left: 0px;
   font-size: 16px;
   text-align: left;
@@ -51,9 +45,22 @@ div {
   }
 }
 
-.lastInputKey {
-  width: 100%;
-  color: rgba(100,100,100,1);
-  position: relative;
-  top: 150px;
+
+.bottomContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: bottom;
+  margin-top: 40px;
+  .lastInputKey {
+    width: 50%;
+    color: rgba(100,100,100,1);
+    text-align: left;
+  }
+  .questionInfo {
+    width: 25%;
+    color: rgba(100,100,100,1);
+    text-align: left;
+    line-height: 25px;
+    border-bottom: 1.5px dotted rgba(100,100,100,0.5);
+  }
 }

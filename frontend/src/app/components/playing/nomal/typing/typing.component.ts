@@ -91,4 +91,13 @@ export class TypingComponent implements OnInit {
       }
     }
   }
+
+  getFrequencyString(wordindex: number): string {
+    let frequency: number;
+    let frequencyString: string = '';
+    frequency = this.playingDataService.getQuestionInfo(this.wordIndex).frequency;
+    frequencyString = '★'.repeat(frequency);
+    frequencyString += '☆'.repeat(5-frequency);
+    return frequencyString;
+  }
 }

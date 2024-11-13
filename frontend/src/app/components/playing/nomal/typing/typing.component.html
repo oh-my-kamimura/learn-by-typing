@@ -20,6 +20,13 @@
   {{ automatons[wordIndex]?.base.pendingRoman }}
 </div>
 
-<div class="lastInputKey">
-  Key: <code style="border: 1px solid gray; padding: 0.2rem">{{ lastInputKey?.key }}</code>
+<div class="bottomContainer">
+  <div class="lastInputKey">
+    Key: <code style="border: 1px solid gray; padding: 0.2rem">{{ lastInputKey?.key }}</code>
+  </div>
+
+  <div class="questionInfo">
+    問題数: {{ wordIndex + 1 }} / {{ playingDataService.getTotalQuestionNum() }}問目 <br>
+    頻出度: {{ getFrequencyString(wordIndex) }}
+  </div>
 </div>
