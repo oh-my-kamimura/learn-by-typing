@@ -63,8 +63,8 @@ export class QuestionDataService {
 
   private fetchQuestionUrl: string = environment.apiUrl + '/question';
 
-  fetchPlayingQuestionList(sectionId: number, questionNum: number): Observable<Array<Question>> {
-      return this.http.get<Array<Question>>(this.fetchQuestionUrl + "/" + sectionId).pipe(
+  fetchPlayingQuestionList(sectionId: number, fetchQuestionNum: number): Observable<Array<Question>> {
+      return this.http.get<Array<Question>>(this.fetchQuestionUrl + "?sectionId=" + sectionId + "&fetchQuestionNum=" + fetchQuestionNum).pipe(
       tap((data) => console.log('data fetched', data)),
       shareReplay(1)
     );

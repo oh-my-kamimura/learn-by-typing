@@ -13,6 +13,8 @@ export class PlayingDataService {
   private selectedExamId: number = 0;
   private selectedCategoryId: number = 0;
   private selectedSectionId: number = 0;
+  private fetchQuestionNum: number = 2;
+  private currentQuestionNum: number = 1;
 
   private playingQuestionList: Array<Question> = [];
 
@@ -62,7 +64,7 @@ export class PlayingDataService {
   }
 
   fetchPlayingQuestionList() {
-    this.questionDataService.fetchPlayingQuestionList(this.selectedSectionId, 1).subscribe(questions => {
+    this.questionDataService.fetchPlayingQuestionList(this.selectedSectionId, this.fetchQuestionNum).subscribe(questions => {
       this.playingQuestionList = questions;
     });
   }
