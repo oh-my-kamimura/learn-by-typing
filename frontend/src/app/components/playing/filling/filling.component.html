@@ -1,1 +1,17 @@
-<p>filling works!</p>
+<div class="filling-main" *ngIf="emielService.layout">
+  <ng-container *ngIf="showCountdown; else typingContent">
+    <div class="countdown">{{ countdownMessage }}</div>
+  </ng-container>
+  <ng-template #typingContent>
+    <ng-container *ngIf="emielService.isFinished; else typingTemplate">
+      <lbt-record [wordRecords]="emielService.wordRecords"></lbt-record>
+    </ng-container>
+    <ng-template #typingTemplate>
+      <lbt-typing
+        [layout]="emielService.layout"
+        (onWordFinished)="emielService.finishWord($event.automaton, $event.displayedAt, $event.missCount)"
+        (onFinished)="emielService.finishTyping()"
+      ></lbt-typing>
+    </ng-template>
+  </ng-template>
+</div>

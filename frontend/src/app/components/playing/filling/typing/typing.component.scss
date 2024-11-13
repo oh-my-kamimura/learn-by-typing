@@ -1,0 +1,66 @@
+div {
+  line-break: anywhere;
+}
+
+.statement {
+  width: 100%;
+  color: rgba(230,80,30,1);
+  margin-top: 30px;
+  font-weight: Medium;
+  font-size: 20px;
+  text-align: left;
+  .finished {
+    color: rgba(230,80,30,0.4);
+  }
+}
+
+.line{
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid rgb(160, 160, 160);
+  margin-top: 40px;
+}
+
+.hiragana {
+  width: 100%;
+  color: rgba(70,70,70,0.8);
+  margin-top: 30px;
+  font-weight: Regular;
+  font-size: 17px;
+  text-align: left;
+  .finished {
+    color: rgba(180,180,180,0.8);
+  }
+}
+
+.english {
+  width: 100%;
+  color: rgba(70,70,70,0.8);
+  margin-top: 20px;
+  left: 0px;
+  font-size: 16px;
+  text-align: left;
+  .finished {
+    color: rgba(180,180,180,0.8);
+  }
+}
+
+
+.bottomContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: bottom;
+  margin-top: 40px;
+  .lastInputKey {
+    width: 50%;
+    color: rgba(100,100,100,1);
+    text-align: left;
+  }
+  .questionInfo {
+    width: 25%;
+    color: rgba(100,100,100,1);
+    text-align: left;
+    line-height: 25px;
+    border-bottom: 1.5px dotted rgba(100,100,100,0.5);
+  }
+}

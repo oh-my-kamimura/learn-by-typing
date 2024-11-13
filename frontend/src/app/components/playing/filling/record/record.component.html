@@ -1,0 +1,68 @@
+<div class="record-box">
+  <div class="record-row">
+    <div class="key">スコア</div>
+    <div class="value"> {{ this.score | number:'1.0' }} </div>
+  </div>
+  <div class="record-row">
+    <span class="key">ランク</span>
+    <span class="value">{{ this.rank }}</span>
+  </div>
+  <div class="record-row">
+    <span class="key">入力時間</span>
+    <span class="value"> {{ this.totalInputSeconds | number:'1.1-1' }} 秒</span>
+  </div>
+  <div class="record-row">
+    <span class="key">入力文字数</span>
+    <span class="value"> {{ this.totalSucceededKeys }} </span>
+  </div>
+  <div class="record-row">
+    <span class="key">ミスタイプ数</span>
+    <span class="value"> {{ this.totalMissedKeys }} </span>
+  </div>
+  <div class="record-row">
+    <span class="key">WPM</span>
+    <span class="value">
+      {{ this.wpm | number:'1.1-1' }}
+    </span>
+  </div>
+  <div class="record-row">
+    <span class="key">正確率</span>
+    <span class="value">{{ this.overallAccuracy * 100 | number:'1.1-1' }} %</span>
+  </div>
+</div>
+
+<div class="words-box">
+  <ng-container
+    *ngFor="let record of getRecords()"
+  >
+    <div class="word">
+      {{ record.mixedText }}
+    </div>
+    <div class="record">
+      入力時間: {{ record.inputSeconds | number:'1.1-1' }} 秒<br>
+      WPM: {{ record.wpm | number:'1.1-1' }} <br>
+      正確率: {{ record.accuracy * 100 | number:'1.1-1' }} %
+    </div>
+</ng-container>
+</div>
+
+<div class="next-menu">
+  <div class="button">
+    <div class="rectangle">
+      <a routerLink="/exam/section/playing/start" class="text"> もう一度 </a>
+    </div>
+  </div>
+  <div class="button">
+    <div class="rectangle">
+      <a
+        routerLink="/exam/section"
+        [queryParams]="{
+          'exam-id': playingDataService.getSelectedExam()?.examId
+        }"
+        class="text"
+      >
+        問題選択へ
+      </a>
+    </div>
+  </div>
+</div>
