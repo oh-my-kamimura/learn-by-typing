@@ -16,6 +16,7 @@ import { PlayingDataService } from '../../../../services/playing-data.service';
 export class RecordComponent {
   @Input() wordRecords: WordRecord[] = [];
   score: number = 0;
+  rank: string = '';
   totalInputSeconds: number = 0;
   totalSucceededKeys: number = 0;
   totalMissedKeys: number = 0;
@@ -54,5 +55,27 @@ export class RecordComponent {
     this.wpm = ((this.totalSucceededKeys / this.totalInputSeconds) * 60)
     this.overallAccuracy = (this.totalSucceededKeys / (this.totalSucceededKeys + this.totalMissedKeys));
     this.score = this.wpm * this.overallAccuracy;
+    this.rank = this.evaluateRank();
+  }
+
+  evaluateRank(): string {
+    const rankMap = [
+      { min: 600, rank: "神" },
+      { min: 500, rank: "マスター" },
+      { min: 400, rank: "エリート" },
+      { min: 350, rank: "プロ" },
+      { min: 300, rank: "S" },
+      { min: 250, rank: "A+" },
+      { min: 200, rank: "A" },
+      { min: 150, rank: "B+" },
+      { min: 100, rank: "B" },
+      { min: 75, rank: "C+" },
+      { min: 50, rank: "C" },
+      { min: 25, rank: "D" },
+      { min: 10, rank: "E" },
+      { min: 0, rank: "F" },
+    ];
+    const result = rankMap.find(item => this.score >= item.min);
+    return result ? result.rank : "計測不能";
   }
 }
