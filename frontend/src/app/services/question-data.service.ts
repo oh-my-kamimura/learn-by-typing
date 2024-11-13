@@ -6,6 +6,7 @@ import { Exam } from '../models/exam.model';
 import { Category } from '../models/category.model';
 import { Section } from '../models/section.model';
 import { Question } from '../models/question.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class QuestionDataService {
 
   constructor(private http: HttpClient) {};
 
-  private fetchInitDataUrl: string = '/app/init';
+  private fetchInitDataUrl: string = environment.apiUrl + '/init';
   private examListCache$: Observable<any> | undefined;
   private examList: Array<Exam> = [];
 
@@ -60,7 +61,7 @@ export class QuestionDataService {
     return this.examList.find(exam => exam.examId == examId);
   }
 
-  private fetchQuestionUrl: string = '/app/question';
+  private fetchQuestionUrl: string = environment.apiUrl + '/question';
 
   fetchPlayingQuestionList(sectionId: number, questionNum: number): Observable<Array<Question>> {
       return this.http.get<Array<Question>>(this.fetchQuestionUrl + "/" + sectionId).pipe(
