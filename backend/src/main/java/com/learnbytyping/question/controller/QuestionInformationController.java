@@ -28,9 +28,12 @@ public class QuestionInformationController {
     return questionInformationService.getExamInformation();
   }
 
-  @RequestMapping("/question/{sectionId}")
-  public List<Question> getQuestionList(@PathVariable("sectionId") int sectionId) {
-    return questionInformationService.getQuestionBySectionId(sectionId);
+  @RequestMapping("/question")
+  public List<Question> getQuestionList(
+    @RequestParam(value = "sectionId", required = true) int sectionId,
+    @RequestParam(value = "fetchQuestionNum", required = true) int questionNum
+  ) {
+    return questionInformationService.getQuestionBySectionId(sectionId, questionNum);
   }
 
   @RequestMapping("/test")

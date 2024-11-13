@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -37,7 +38,13 @@ public class QuestionInformationService {
     return examRepository.findAll();
   }
 
-  public List<Question> getQuestionBySectionId(int sectionId) {
-    return questionRepository.findBySectionId(sectionId);
+  public List<Question> getQuestionBySectionId(int sectionId, int questionNum) {
+    List<Question> questions = questionRepository.findBySectionId(sectionId);
+    Collections.shuffle(questions);
+    if (questions.size() > questionNum) {
+      return questions.subList(0, questionNum);
+    } else {
+      return questions;
+    }
   }
 }
