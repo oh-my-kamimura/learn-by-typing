@@ -13,7 +13,7 @@ import java.util.List;
 
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"https://www.learn-by-typing.com", "http://localhost:4200"})
 @RequiredArgsConstructor
 public class QuestionInformationController {
 

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.learnbytyping.inquiry.entity.Inquiry;
 
 @RestController
+@CrossOrigin(origins = {"https://www.learn-by-typing.com", "http://localhost:4200"})
 public class InquiryController {
 
   @Autowired
