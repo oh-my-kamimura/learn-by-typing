@@ -16,9 +16,9 @@ import { RecordComponent } from './record/record.component';
 })
 export class NomalComponent implements OnInit {
 
-  private countdown: number = 3;
-  private showCountdown: boolean = true;
-  private countdownMessage: string = '';
+  public countdown: number = 3;
+  public showCountdown: boolean = true;
+  public countdownMessage: string = '';
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
