@@ -71,7 +71,7 @@ $accent-color: rgba(230,80,30,1);
     margin: auto;
     transition: .3s cubic-bezier(0.5, 1, 0.89, 1);
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.08);
       .rectangle{
         background: #FFFFFF;
         border: 2.5px solid $accent-color;
@@ -82,7 +82,7 @@ $accent-color: rgba(230,80,30,1);
     }
     .rectangle {
       width: 100%;
-      height: 65px;
+      height: 50px;
       background: $accent-color;
       opacity: 1;
       position: relative;
@@ -92,9 +92,9 @@ $accent-color: rgba(230,80,30,1);
     }
     .text {
       width: 100%;
-      height: 65px;
+      height: 50px;
       color: rgba(255,255,255,1);
-      line-height: 65px;
+      line-height: 50px;
       position: absolute;
       top: 0;
       left: 0;

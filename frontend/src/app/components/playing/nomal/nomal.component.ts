@@ -10,7 +10,7 @@ import { RecordComponent } from './record/record.component';
 @Component({
   selector: 'lbt-nomal',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, TypingComponent, RecordComponent],
+  imports: [CommonModule, TypingComponent, RecordComponent],
   templateUrl: './nomal.component.html',
   styleUrls: ['./nomal.component.scss', '/src/styles.scss']
 })

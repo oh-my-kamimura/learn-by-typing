@@ -8,7 +8,7 @@ import { PlayingDataService } from '../../../../services/playing-data.service';
 @Component({
   selector: 'lbt-record',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './record.component.html',
   styleUrls: ['./record.component.scss', '/src/styles.scss']
 })

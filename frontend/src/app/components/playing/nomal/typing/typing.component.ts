@@ -9,7 +9,7 @@ import { MixedText, MixedTextAutomaton } from '../../mixed-guide';
 @Component({
   selector: 'lbt-typing',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [CommonModule],
   templateUrl: './typing.component.html',
   styleUrls: ['./typing.component.scss'],
 })
