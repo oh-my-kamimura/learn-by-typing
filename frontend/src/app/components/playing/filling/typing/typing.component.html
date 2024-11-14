@@ -1,7 +1,12 @@
 <div class="statement">
+  {{ getBeforeStatement() }}
   <span class="finished">
     {{ automatons[wordIndex]?.finishedMixedSubstr }}
-  </span>{{ automatons[wordIndex]?.pendingMixedSubstr }}
+  </span>
+  <span class="pending">
+    {{ automatons[wordIndex]?.pendingMixedSubstr }}
+  </span>
+  {{ getAfterStatement() }}
 </div>
 
 <div class="line"></div>
@@ -27,6 +32,6 @@
 
   <div class="questionInfo">
     問題数: {{ wordIndex + 1 }} / {{ playingDataService.getTotalQuestionNum() }}問目 <br>
-    頻出度: {{ getFrequencyString(wordIndex) }}
+    頻出度: {{ getFrequencyString() }}
   </div>
 </div>

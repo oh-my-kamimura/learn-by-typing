@@ -4,13 +4,16 @@ div {
 
 .statement {
   width: 100%;
-  color: rgba(230,80,30,1);
+  color: rgba(60,60,60,0.8);
   margin-top: 30px;
   font-weight: Medium;
   font-size: 20px;
   text-align: left;
   .finished {
     color: rgba(230,80,30,0.4);
+  }
+  .pending {
+    color: rgba(230,80,30,1);
   }
 }
 

@@ -57,8 +57,8 @@ export class TypingComponent implements OnInit {
       .map(
         (question) =>
           new MixedText(
-            question.hiragana.replace(/「|」/g, ''),
-            question.statement.replace(/「|」/g, '').split('').join(',')
+            question.hiragana.substring(question.hiragana.indexOf("「") + 1, question.hiragana.indexOf("」")),
+            question.statement.substring(question.statement.indexOf("「") + 1, question.statement.indexOf("」")).split('').join(',')
           )
       );
     console.log(this.words);
@@ -92,12 +92,26 @@ export class TypingComponent implements OnInit {
     }
   }
 
-  getFrequencyString(wordindex: number): string {
+  getFrequencyString(): string {
     let frequency: number;
     let frequencyString: string = '';
     frequency = this.playingDataService.getQuestionInfo(this.wordIndex).frequency;
     frequencyString = '★'.repeat(frequency);
     frequencyString += '☆'.repeat(5-frequency);
     return frequencyString;
+  }
+
+  getBeforeStatement(): string {
+    let beforeStatement: string = '';
+    beforeStatement = this.playingDataService.getQuestionInfo(this.wordIndex).statement;
+    beforeStatement = beforeStatement.substring(0, beforeStatement.indexOf("「") + 1);
+    return beforeStatement;
+  }
+
+  getAfterStatement(): string {
+    let afterStatement: string = '';
+    afterStatement = this.playingDataService.getQuestionInfo(this.wordIndex).statement;
+    afterStatement = afterStatement.substring(afterStatement.indexOf("」"));
+    return afterStatement;
   }
 }
