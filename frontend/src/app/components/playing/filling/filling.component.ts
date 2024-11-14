@@ -1,7 +1,7 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, HostListener } from '@angular/core';
 import { PlayingDataService } from '../../../services/playing-data.service';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 import { EmielService } from '../../../services/emiel.service';
 
 import { TypingComponent } from './typing/typing.component';
@@ -23,7 +23,8 @@ export class FillingComponent implements OnInit {
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     public playingDataService: PlayingDataService,
-    public emielService: EmielService
+    public emielService: EmielService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -50,5 +51,10 @@ export class FillingComponent implements OnInit {
       }
       this.changeDetectorRef.detectChanges();
     }, 1000);
+  }
+
+  @HostListener('document:keydown.escape', ['$event'])
+  onEscPressed(event: KeyboardEvent) {
+    this.router.navigate(["/exam/section/playing/start"]);
   }
 }

@@ -66,6 +66,10 @@ export class PlayingDataService {
     return this.totalQuestionNum;
   }
 
+  setTotalQuestionNum(totalQuestionNum : number) {
+    this.totalQuestionNum = totalQuestionNum;
+  }
+
   fetchPlayingQuestionList() {
     this.questionDataService
       .fetchPlayingQuestionList(this.selectedSectionId, this.totalQuestionNum)
