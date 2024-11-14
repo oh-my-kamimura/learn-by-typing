@@ -27,6 +27,7 @@ export class NomalComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.playingDataService.setTotalQuestionNum(1);
     this.playingDataService.fetchPlayingQuestionList();
     this.emielService.detectLayout();
     this.emielService.startTyping();

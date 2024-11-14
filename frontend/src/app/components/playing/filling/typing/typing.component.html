@@ -4,7 +4,8 @@
     {{ automatons[wordIndex]?.finishedMixedSubstr }}
   </span>
   <span class="pending">
-    {{ automatons[wordIndex]?.pendingMixedSubstr }}
+    {{ automatons[wordIndex]?.pendingMixedSubstr.substring(0, 1) }}
+    {{ "⚫︎".repeat(automatons[wordIndex]?.pendingMixedSubstr.length - 1) }}
   </span>
   {{ getAfterStatement() }}
 </div>
