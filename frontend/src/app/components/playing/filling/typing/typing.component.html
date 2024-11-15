@@ -16,14 +16,20 @@
   <span class="finished">
     {{ automatons[wordIndex]?.base.finishedWord }}
   </span>
-  {{ automatons[wordIndex]?.base.pendingWord }}
+  <span class="pending">
+    {{ automatons[wordIndex]?.base.pendingWord.substring(0,1) }}
+    {{ "⚫︎".repeat(automatons[wordIndex]?.base.pendingWord.length - 1) }}
+  </span>
 </div>
 
 <div class="english">
   <span class="finished">
     {{ automatons[wordIndex]?.base.finishedRoman }}
   </span>
-  {{ automatons[wordIndex]?.base.pendingRoman }}
+  <span class="pending">
+    {{ automatons[wordIndex]?.base.pendingRoman.substring(0,1) }}
+    {{ "⚫︎".repeat(automatons[wordIndex]?.base.pendingRoman.length - 1) }}
+  </span>
 </div>
 
 <div class="bottomContainer">
