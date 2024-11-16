@@ -13,8 +13,8 @@ public class InquiryService {
   @Autowired
   private InquiryRepository inquiryRepository;
 
-  public Inquiry saveInquiry(Inquiry inquiry) {
-    return inquiryRepository.save(inquiry);
+  public void saveInquiry(Inquiry inquiry) {
+    inquiryRepository.save(inquiry);
   }
 
 }

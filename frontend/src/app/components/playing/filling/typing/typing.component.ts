@@ -63,7 +63,7 @@ export class TypingComponent implements OnInit {
       );
     console.log(this.words);
     return this.words.map(word => new MixedTextAutomaton(
-      emiel.rule.getRoman(layout).build(word.kanaText),
+      emiel.rule.getRoman(layout).build(word.kanaText.toLowerCase()),
       word,
       )
     )
