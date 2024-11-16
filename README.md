@@ -6,7 +6,9 @@
 
 ## サービスのURL
 
-http://learn-by-typing.com
+https://www.learn-by-typing.com
+
+※一部ブラウザ、キーボード形式では正常に動作しない可能性があります。
 
 <br />
 
@@ -38,10 +40,17 @@ http://learn-by-typing.com
 | ![トップ画面](/docs/img/function-list/top.png) | ![資格選択画面](/docs/img/function-list/select-exam.png) |
 | サービスの概要とお問い合わせ方法を掲載しています。 | 学習したい資格を選択する画面です。 |
 
-| タイピング画面 |　結果画面 |
+| タイピング画面「暗記モード」 |　タイピング画面2「解答モード」 |
 | ---- | ---- |
-| ![タイピング画面](/docs/img//function-list/typing.png) | ![結果画面](/docs/img/function-list/result.png) |
-| 実際にタイピングを行う画面です。 | タイピング結果（速度、正確性など）を表示しています。 |
+| ![タイピング画面1](/docs/img//function-list/typing_nomal.png) | ![タイピング画面2](/docs/img/function-list/typing_filling.png) |
+| 資格試験に関する文章をタイピングしながら理解を深める「暗記モード」 | 隠された部分を埋めて知識を定着させる「解答モード」 |
+
+|　結果画面 | お問い合わせ画面 |
+| ---- | ---- |
+| ![結果画面](/docs/img/function-list/result.png) | ![お問い合わせ画面](/docs/img//function-list/inquiry.png) |
+| タイピング結果（速度、正確性など）を表示しています。 | 要望や不具合連絡を受け付ける画面です。 |
+
+
 
 <br />
 
@@ -51,7 +60,7 @@ http://learn-by-typing.com
   - angular 17.3.10
   - TypeScript
   - HTML
-  - CSS
+  - CSS/SCSS
 - **バックエンド** 
   - Spring Boot
   - Java17
@@ -59,8 +68,8 @@ http://learn-by-typing.com
   - MySQL
 - **ビルドツール** 
   - Node.js
-- **インフラ** 
-  - AWS（EC2, RDS, S3）
+- **インフラ**
+  - AWS（EC2, RDS, S3, CloudFront, ELB, Route53）
 - **その他** 
   - Figma 
 
@@ -70,10 +79,10 @@ http://learn-by-typing.com
 
 さらなる学習体験の向上を目指し、以下の機能追加を予定しています。
 
-- **新しいタイピング機能**
-  - 問題形式、穴埋め形式など学習効率を高めるタイピング機能を追加予定です。
 - **ログイン機能**
   - ログイン機能を追加し、ユーザーの学習履歴を保存することでモチベーションの向上を図ります。
+- **新しいタイピング機能**
+  - ビジュアル形式、問題形式など学習効率を高めるタイピング機能を追加予定です。
 
 <br />  
 
