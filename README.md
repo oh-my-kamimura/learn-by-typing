@@ -42,7 +42,7 @@ https://www.learn-by-typing.com
 
 | タイピング画面「暗記モード」 |　タイピング画面2「解答モード」 |
 | ---- | ---- |
-| ![タイピング画面1](/docs/img//function-list/typing_nomal.png) | ![タイピング画面2](/docs/img/function-list/typing_filling.png) |
+| ![タイピング画面1](/docs/img//function-list/typing_nomal.png) | ![タイピング画面](/docs/img/function-list/typing_filling.png) |
 | 資格試験に関する文章をタイピングしながら理解を深める「暗記モード」 | 隠された部分を埋めて知識を定着させる「解答モード」 |
 
 |　結果画面 | お問い合わせ画面 |
