@@ -78,4 +78,12 @@ export class RecordComponent {
     const result = rankMap.find(item => this.score >= item.min);
     return result ? result.rank : "計測不能";
   }
+
+  getTargetMixedText (index: number) {
+    let statement = this.playingDataService.getQuestionInfo(index).statement;
+    let start = statement.indexOf("「");
+    let end = statement.indexOf("」");
+    let targetMixedText = statement.substring(start + 1, end);
+    return targetMixedText;
+  }
 }

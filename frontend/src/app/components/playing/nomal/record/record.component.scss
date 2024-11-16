@@ -47,14 +47,22 @@
   }
   .record {
     width: 90%;
-    padding-bottom: 15px;
-    margin: 0 auto 15px;
+    padding-bottom: 5px;
+    margin: 0 auto 5px;
     color: rgba(102,102,102,1);
     font-weight: Regular;
     font-size: 12px;
     text-align: left;
-    border-bottom: 1px solid rgba(102,102,102,0.5);
     line-height: 20px;
+  }
+  .link {
+    width: 90%;
+    display: block;
+    padding-bottom: 15px;
+    margin: 0 auto 15px;
+    color: #3498DB;
+    font-size: 12px;
+    border-bottom: 1px solid rgba(102,102,102,0.5);
   }
 }
 

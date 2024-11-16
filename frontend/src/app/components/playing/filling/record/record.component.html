@@ -43,6 +43,13 @@
       WPM: {{ record.wpm | number:'1.1-1' }} <br>
       正確率: {{ record.accuracy * 100 | number:'1.1-1' }} %
     </div>
+    <a
+      class="link"
+      [href]="'https://www.google.com/search?q=' + record.mixedText + ' とは'"
+      target="_blank"
+    >
+      ▶︎ {{ record.mixedText }} について詳しく調べる
+    </a>
 </ng-container>
 </div>
 
