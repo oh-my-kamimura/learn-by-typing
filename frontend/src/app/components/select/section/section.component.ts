@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { QuestionDataService } from '../../../services/question-data.service';
 import { BreadcrumbsComponent } from '../../shared/breadcrumbs/breadcrumbs.component';
+import { PlayingDataService } from '../../../services/playing-data.service';
 
 @Component({
   selector: 'lbt-section',
@@ -19,12 +20,22 @@ export class SectionComponent {
 
   constructor(
     private route: ActivatedRoute,
-    public questionDataService: QuestionDataService
+    public questionDataService: QuestionDataService,
+    public PlayingDataService: PlayingDataService
   ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(
       (params) => (this.examId = params['exam-id'])
     );
+    if (this.examId) {
+      this.PlayingDataService.setGameInfo(this.examId);
+    }
+    if (!this.examId) {
+      let selectedExamId = this.PlayingDataService.getSelectedExam()?.examId;
+      if (selectedExamId) {
+        this.examId = selectedExamId;
+      }
+    }
   }
 }

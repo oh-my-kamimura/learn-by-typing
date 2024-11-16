@@ -21,15 +21,16 @@ export class PlayingDataService {
     this.loadGameInfo();
   }
 
-  setGameInfo(examId: number, categoryId: number, sectionId: number) {
+  setGameInfo(examId: number, categoryId?: number, sectionId?: number) {
     this.selectedExamId = examId;
-    this.selectedCategoryId = categoryId;
-    this.selectedSectionId = sectionId;
-    console.log('Setting game information.');
-
     sessionStorage.setItem('selectedExamId', this.selectedExamId.toString());
-    sessionStorage.setItem('selectedCategoryId', this.selectedCategoryId.toString());
-    sessionStorage.setItem('selectedSectionId', this.selectedSectionId.toString());
+    if (categoryId && sectionId){
+      this.selectedCategoryId = categoryId;
+      this.selectedSectionId = sectionId;
+      sessionStorage.setItem('selectedCategoryId', this.selectedCategoryId.toString());
+      sessionStorage.setItem('selectedSectionId', this.selectedSectionId.toString());
+    }
+    console.log('Setting game information.');
   }
 
   loadGameInfo() {
