@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.ArrayList;
 
 @Service
 @RequiredArgsConstructor
@@ -40,6 +41,20 @@ public class QuestionInformationService {
 
   public List<Question> getQuestionBySectionId(int sectionId, int questionNum) {
     List<Question> questions = questionRepository.findBySectionId(sectionId);
+    Collections.shuffle(questions);
+    if (questions.size() > questionNum) {
+      return questions.subList(0, questionNum);
+    } else {
+      return questions;
+    }
+  }
+
+  public List<Question> getQuestionByCategoryId(int categoryId, int questionNum) {
+    List<Question> questions = new ArrayList<>();
+    List<Section> sectionList = sectionRepository.findByCategoryId(categoryId);
+    for (Section section: sectionList){
+      questions.addAll(questionRepository.findBySectionId(section.getSectionId().intValue()));
+    }
     Collections.shuffle(questions);
     if (questions.size() > questionNum) {
       return questions.subList(0, questionNum);

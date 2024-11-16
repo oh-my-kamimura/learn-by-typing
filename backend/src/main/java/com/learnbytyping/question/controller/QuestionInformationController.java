@@ -30,20 +30,13 @@ public class QuestionInformationController {
 
   @RequestMapping("/question")
   public List<Question> getQuestionList(
-    @RequestParam(value = "sectionId", required = true) int sectionId,
+    @RequestParam(value = "categoryId", required = false) Integer categoryId,
+    @RequestParam(value = "sectionId", required = false) Integer sectionId,
     @RequestParam(value = "fetchQuestionNum", required = true) int questionNum
   ) {
-    return questionInformationService.getQuestionBySectionId(sectionId, questionNum);
+    if (sectionId != null)
+      return questionInformationService.getQuestionBySectionId(sectionId, questionNum);
+    else
+      return questionInformationService.getQuestionByCategoryId(categoryId, questionNum);
   }
-
-  @RequestMapping("/test")
-  public void testMethod() {
-    List<Exam> testList = questionInformationService.getExamInformation();
-    System.out.println(testList);
-    System.out.println();
-    System.out.println(testList.get(0).getCategoryList());
-    System.out.println();
-    System.out.println(testList.get(0).getCategoryList().get(0).getSectionList());
-  }
-
 }
