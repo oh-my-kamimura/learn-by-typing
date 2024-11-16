@@ -4,7 +4,7 @@
   <div class="subtitle">
     {{ playingDataService.getSelectedCategory()?.categoryName }}
     【
-      {{ playingDataService.getSelectedSection()?.sectionName}}
+      {{ playingDataService.getSelectedSection()?.sectionName || 'まとめ' }}
     】
   </div>
   <div class="start-base">

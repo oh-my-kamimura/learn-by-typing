@@ -39,16 +39,4 @@ export class PlayingComponent {
       );
     }
   }
-
-  // getSelectedExam(): Exam {
-  //   return this.playingDataService.getSelectedExam();
-  // }
-
-  // getSelectedCategory(): Category {
-  //   return this.playingDataService.getSelectedCategory();
-  // }
-
-  // getSelectedSection(): Section {
-  //   return this.playingDataService.getSelectedSection();
-  // }
 }

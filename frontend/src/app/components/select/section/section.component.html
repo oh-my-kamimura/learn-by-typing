@@ -28,9 +28,17 @@
       >
         <span class="name">{{ section.sectionName }}</span>
       </a>
-      <div class="rectangle summary">
+      <a
+        class="rectangle summary"
+        routerLink="/exam/section/playing/start"
+        [queryParams]="{
+          'exam-id': examId,
+          'category-id': category.categoryId,
+          'section-id': 0
+        }"
+      >
         <span class="name">まとめ</span>
-      </div>
+      </a>
     </div>
   </div>
 </div>

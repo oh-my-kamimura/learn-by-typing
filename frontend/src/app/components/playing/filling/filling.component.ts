@@ -28,7 +28,7 @@ export class FillingComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.playingDataService.setTotalQuestionNum(2);
+    this.playingDataService.setTotalQuestionNum(5);
     this.playingDataService.fetchPlayingQuestionList();
     this.emielService.detectLayout();
     this.emielService.startTyping();
