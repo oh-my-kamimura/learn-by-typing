@@ -51,7 +51,7 @@ export class TypingComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
-  buildAutomatons(layout: emiel.KeyboardLayout): any[] {
+  buildAutomatons(layout: emiel.KeyboardLayout): MixedTextAutomaton[] {
     this.words = this.playingDataService
       .getPlayingQuestionList()
       .map(
@@ -63,7 +63,7 @@ export class TypingComponent implements OnInit {
       );
     console.log(this.words);
     return this.words.map(word => new MixedTextAutomaton(
-      emiel.rule.getRoman(layout).build(word.kanaText.toLowerCase()),
+      emiel.rule.getRoman(layout).build(word.kanaText),
       word,
       )
     )
@@ -96,6 +96,8 @@ export class TypingComponent implements OnInit {
     let frequency: number;
     let frequencyString: string = '';
     frequency = this.playingDataService.getQuestionInfo(this.wordIndex).frequency;
+
+    if (frequency < 0) frequency = 0;
     frequencyString = '★'.repeat(frequency);
     frequencyString += '☆'.repeat(5-frequency);
     return frequencyString;
@@ -113,5 +115,9 @@ export class TypingComponent implements OnInit {
     afterStatement = this.playingDataService.getQuestionInfo(this.wordIndex).statement;
     afterStatement = afterStatement.substring(afterStatement.indexOf("」"));
     return afterStatement;
+  }
+
+  max(a: number, b: number): number {
+    return Math.max(a, b);
   }
 }

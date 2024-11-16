@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BreadcrumbComponent, BreadcrumbItemDirective } from "xng-breadcrumb";
+import { BreadcrumbComponent } from "xng-breadcrumb";
 import { BreadcrumbService } from 'xng-breadcrumb';
 
 @Component({
   selector: 'lbt-breadcrumbs',
   standalone: true,
-  imports: [CommonModule, BreadcrumbComponent, BreadcrumbItemDirective],
+  imports: [CommonModule, BreadcrumbComponent],
   templateUrl: './breadcrumbs.component.html',
   styleUrls: ['./breadcrumbs.component.scss', '/src/styles.scss']
 })

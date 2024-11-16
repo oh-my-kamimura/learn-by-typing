@@ -5,7 +5,7 @@
   </span>
   <span class="pending">
     {{ automatons[wordIndex]?.pendingMixedSubstr.substring(0, 1) }}
-    {{ "⚫︎".repeat(automatons[wordIndex]?.pendingMixedSubstr.length - 1) }}
+    {{ "⚫︎".repeat(max(0, automatons[wordIndex]?.pendingMixedSubstr.length - 1)) }}
   </span>
   {{ getAfterStatement() }}
 </div>
@@ -18,7 +18,7 @@
   </span>
   <span class="pending">
     {{ automatons[wordIndex]?.base.pendingWord.substring(0,1) }}
-    {{ "⚫︎".repeat(automatons[wordIndex]?.base.pendingWord.length - 1) }}
+    {{ "⚫︎".repeat(max(0, automatons[wordIndex]?.base.pendingWord.length - 1)) }}
   </span>
 </div>
 
@@ -28,7 +28,7 @@
   </span>
   <span class="pending">
     {{ automatons[wordIndex]?.base.pendingRoman.substring(0,1) }}
-    {{ "⚫︎".repeat(automatons[wordIndex]?.base.pendingRoman.length - 1) }}
+    {{ "⚫︎".repeat(max(0, automatons[wordIndex]?.base.pendingRoman.length - 1)) }}
   </span>
 </div>
 

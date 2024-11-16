@@ -45,7 +45,7 @@
     </div>
     <a
       class="link"
-      [href]="'https://www.google.com/search?q=' + record.mixedText + ' とは'"
+      [href]="'https://www.google.com/search?q=' + getTargetMixedText(index) + ' とは'"
       target="_blank"
     >
       ▶︎ {{ getTargetMixedText(index) }} について詳しく調べる
