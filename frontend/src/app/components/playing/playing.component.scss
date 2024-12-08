@@ -30,14 +30,29 @@
     text-align: center;
     border-bottom: 4px solid rgba(105,136,157,0.8);
   }
-
   .start-base {
-    height: 600px;
+    height: auto;
     width: 700px;
     position: absolute;
     top: 240px;
     left: 0;
     right: 0;
     margin: auto;
+  }
+  .annotation {
+    height: auto;
+    width: 700px;
+    position: absolute;
+    top: 675px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-left: 40px;
+    font-size: 14px;
+    color: gray;
+    a {
+      display: inline-block;
+      color: #007bff;
+    }
   }
 }
