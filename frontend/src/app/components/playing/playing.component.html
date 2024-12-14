@@ -10,7 +10,7 @@
   <div class="start-base">
     <router-outlet></router-outlet>
   </div>
-  <div class="annotation">
+  <div class="annotation" *ngIf="!emielService.isFinished">
     ※一部のOSバージョンやブラウザではプレイできないことがあります（<a href="/contact">お問い合わせ</a>）<br />
     ※escキーで初めからやり直すことができます
   </div>
